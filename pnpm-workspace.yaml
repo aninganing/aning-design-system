@@ -1,0 +1,9 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+overrides:
+  vite: ^6.0.6
+allowBuilds:
+  '@bundled-es-modules/glob': true
+  esbuild: true
+  style-dictionary: true

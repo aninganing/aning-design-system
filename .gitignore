@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+storybook-static/
+.turbo/
+coverage/
+*.log
+.DS_Store
+.env
+.env.local
+
+## AI
+.claude
+CLAUDE.md
