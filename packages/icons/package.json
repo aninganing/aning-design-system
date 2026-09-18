@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "description": "SVG icon React components for the aning design system.",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aninganing/aning-design-system.git",
+    "directory": "packages/icons"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
