@@ -1,5 +1,5 @@
 {
-  "name": "@aning/tokens",
+  "name": "@aninganing/tokens",
   "version": "0.0.0",
   "description": "Design tokens for the aning design system (Figma Tokens → Style Dictionary).",
   "license": "UNLICENSED",
@@ -32,7 +32,7 @@
   "scripts": {
     "build": "node build.mjs",
     "dev": "node build.mjs --watch",
-    "typecheck": "echo \"@aning/tokens: no typecheck (generated output)\""
+    "typecheck": "echo \"@aninganing/tokens: no typecheck (generated output)\""
   },
   "dependencies": {},
   "devDependencies": {

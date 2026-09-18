@@ -11,7 +11,7 @@ const meta: Meta<typeof Button> = {
       description: {
         component: `
 사용자의 액션을 트리거하는 기본 버튼 컴포넌트. 색상/간격/폰트는 전부
-\`@aning/tokens\`의 \`button.*\` 컴포넌트 토큰(라이트/다크 겸용)을 통해 소비하므로,
+\`@aninganing/tokens\`의 \`button.*\` 컴포넌트 토큰(라이트/다크 겸용)을 통해 소비하므로,
 스타일을 바꾸려면 컴포넌트 코드가 아니라 토큰을 먼저 확인한다.
 
 ### 언제 어떤 variant를 쓰나

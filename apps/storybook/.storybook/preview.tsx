@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import '@aning/tokens/css';
+import '@aninganing/tokens/css';
 
 const preview: Preview = {
   parameters: {

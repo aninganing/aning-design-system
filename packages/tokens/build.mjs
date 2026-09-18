@@ -14,4 +14,4 @@ writeFileSync(
   `${light}\n${dark}\n`,
 );
 
-console.log('Built @aning/tokens: build/css/variables.css, build/js/tokens.js');
+console.log('Built @aninganing/tokens: build/css/variables.css, build/js/tokens.js');
