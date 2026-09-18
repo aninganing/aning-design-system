@@ -1,6 +1,6 @@
 {
   "name": "@aninganing/tokens",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Design tokens for the aning design system (Figma Tokens → Style Dictionary).",
   "license": "UNLICENSED",
   "repository": {
