@@ -1,0 +1,7 @@
+{
+  "extends": "@aning/typescript-config/react-library.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [".storybook/**/*.ts", ".storybook/**/*.tsx", "stories/**/*.ts", "stories/**/*.tsx"]
+}
