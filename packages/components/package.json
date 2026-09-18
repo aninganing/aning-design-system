@@ -1,5 +1,5 @@
 {
-  "name": "@aning/react",
+  "name": "@aninganing/react",
   "version": "0.0.0",
   "description": "React component library for the aning design system.",
   "license": "UNLICENSED",
@@ -39,17 +39,17 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@aning/icons": "workspace:*",
-    "@aning/tokens": "workspace:*",
-    "@aning/utils": "workspace:*",
+    "@aninganing/icons": "workspace:*",
+    "@aninganing/tokens": "workspace:*",
+    "@aninganing/utils": "workspace:*",
     "@radix-ui/react-dialog": "^1.1.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@aning/eslint-config": "workspace:*",
-    "@aning/stylelint-config": "workspace:*",
-    "@aning/typescript-config": "workspace:*",
+    "@aninganing/eslint-config": "workspace:*",
+    "@aninganing/stylelint-config": "workspace:*",
+    "@aninganing/typescript-config": "workspace:*",
     "@storybook/react": "^8.4.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",

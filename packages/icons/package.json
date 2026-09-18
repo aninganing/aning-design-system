@@ -1,5 +1,5 @@
 {
-  "name": "@aning/icons",
+  "name": "@aninganing/icons",
   "version": "0.0.0",
   "description": "SVG icon React components for the aning design system.",
   "license": "UNLICENSED",
@@ -34,8 +34,8 @@
     "react": ">=18"
   },
   "devDependencies": {
-    "@aning/eslint-config": "workspace:*",
-    "@aning/typescript-config": "workspace:*",
+    "@aninganing/eslint-config": "workspace:*",
+    "@aninganing/typescript-config": "workspace:*",
     "@types/react": "^18.3.18",
     "eslint": "^9.17.0",
     "tsup": "^8.3.5",

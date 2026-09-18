@@ -1,4 +1,4 @@
-import baseConfig from '@aning/eslint-config';
+import baseConfig from '@aninganing/eslint-config';
 
 export default [
   ...baseConfig,

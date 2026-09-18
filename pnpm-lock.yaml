@@ -23,10 +23,10 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@aning/react':
+      '@aninganing/react':
         specifier: workspace:*
         version: link:../../packages/components
-      '@aning/tokens':
+      '@aninganing/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -36,10 +36,10 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@aning/eslint-config':
+      '@aninganing/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config-eslint
-      '@aning/typescript-config':
+      '@aninganing/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-ts
       '@storybook/addon-a11y':
@@ -84,13 +84,13 @@ importers:
 
   packages/components:
     dependencies:
-      '@aning/icons':
+      '@aninganing/icons':
         specifier: workspace:*
         version: link:../icons
-      '@aning/tokens':
+      '@aninganing/tokens':
         specifier: workspace:*
         version: link:../tokens
-      '@aning/utils':
+      '@aninganing/utils':
         specifier: workspace:*
         version: link:../utils
       '@radix-ui/react-dialog':
@@ -103,13 +103,13 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
-      '@aning/eslint-config':
+      '@aninganing/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
-      '@aning/stylelint-config':
+      '@aninganing/stylelint-config':
         specifier: workspace:*
         version: link:../config-stylelint
-      '@aning/typescript-config':
+      '@aninganing/typescript-config':
         specifier: workspace:*
         version: link:../config-ts
       '@storybook/react':
@@ -202,10 +202,10 @@ importers:
         specifier: '>=18'
         version: 18.3.1
     devDependencies:
-      '@aning/eslint-config':
+      '@aninganing/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
-      '@aning/typescript-config':
+      '@aninganing/typescript-config':
         specifier: workspace:*
         version: link:../config-ts
       '@types/react':
@@ -239,10 +239,10 @@ importers:
         specifier: '>=18'
         version: 18.3.1
     devDependencies:
-      '@aning/eslint-config':
+      '@aninganing/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
-      '@aning/typescript-config':
+      '@aninganing/typescript-config':
         specifier: workspace:*
         version: link:../config-ts
       '@types/react':

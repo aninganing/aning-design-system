@@ -1,4 +1,4 @@
-import '@aning/tokens/css';
+import '@aninganing/tokens/css';
 import './styles/reset.css';
 
 export { Button } from './components/Button';

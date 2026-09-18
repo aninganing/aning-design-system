@@ -10,14 +10,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aning/react": "workspace:*",
-    "@aning/tokens": "workspace:*",
+    "@aninganing/react": "workspace:*",
+    "@aninganing/tokens": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@aning/eslint-config": "workspace:*",
-    "@aning/typescript-config": "workspace:*",
+    "@aninganing/eslint-config": "workspace:*",
+    "@aninganing/typescript-config": "workspace:*",
     "@storybook/addon-a11y": "^8.4.7",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
