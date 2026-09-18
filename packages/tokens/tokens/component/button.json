@@ -1,0 +1,26 @@
+{
+  "button": {
+    "bg": {
+      "primary": {
+        "default": { "$type": "color", "$value": "{color.accent.default}" },
+        "hover": { "$type": "color", "$value": "{color.accent.hover}" }
+      },
+      "secondary": {
+        "default": { "$type": "color", "$value": "{color.bg.subtle}" },
+        "hover": { "$type": "color", "$value": "{color.border.default}" }
+      },
+      "danger": {
+        "default": { "$type": "color", "$value": "{color.danger.default}" },
+        "hover": { "$type": "color", "$value": "{color.danger.hover}" }
+      }
+    },
+    "text": {
+      "primary": { "$type": "color", "$value": "{color.text.inverse}" },
+      "secondary": { "$type": "color", "$value": "{color.text.default}" },
+      "danger": { "$type": "color", "$value": "{color.text.inverse}" }
+    },
+    "radius": { "$type": "borderRadius", "$value": "{radius.md}" },
+    "paddingX": { "$type": "spacing", "$value": "{space.4}" },
+    "paddingY": { "$type": "spacing", "$value": "{space.2}" }
+  }
+}

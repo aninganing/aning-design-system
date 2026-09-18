@@ -1,0 +1,9 @@
+{
+  "radius": {
+    "none": { "$type": "borderRadius", "$value": "0px" },
+    "sm": { "$type": "borderRadius", "$value": "4px" },
+    "md": { "$type": "borderRadius", "$value": "8px" },
+    "lg": { "$type": "borderRadius", "$value": "12px" },
+    "full": { "$type": "borderRadius", "$value": "9999px" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "input": {
+    "bg": {
+      "default": { "$type": "color", "$value": "{color.bg.default}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.border.default}" },
+      "focus": { "$type": "color", "$value": "{color.border.focus}" },
+      "error": { "$type": "color", "$value": "{color.danger.default}" }
+    },
+    "text": { "$type": "color", "$value": "{color.text.default}" },
+    "placeholder": { "$type": "color", "$value": "{color.text.subtle}" },
+    "radius": { "$type": "borderRadius", "$value": "{radius.md}" },
+    "paddingX": { "$type": "spacing", "$value": "{space.3}" },
+    "paddingY": { "$type": "spacing", "$value": "{space.2}" }
+  }
+}

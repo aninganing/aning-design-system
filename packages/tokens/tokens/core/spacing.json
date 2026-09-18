@@ -1,0 +1,15 @@
+{
+  "space": {
+    "0": { "$type": "spacing", "$value": "0px" },
+    "1": { "$type": "spacing", "$value": "4px" },
+    "2": { "$type": "spacing", "$value": "8px" },
+    "3": { "$type": "spacing", "$value": "12px" },
+    "4": { "$type": "spacing", "$value": "16px" },
+    "5": { "$type": "spacing", "$value": "20px" },
+    "6": { "$type": "spacing", "$value": "24px" },
+    "8": { "$type": "spacing", "$value": "32px" },
+    "10": { "$type": "spacing", "$value": "40px" },
+    "12": { "$type": "spacing", "$value": "48px" },
+    "16": { "$type": "spacing", "$value": "64px" }
+  }
+}
