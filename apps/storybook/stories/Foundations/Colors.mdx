@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/blocks';
+import * as tokens from '@aning/tokens';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+Semantic color tokens, generated from `packages/tokens` via Style Dictionary.
+Values shown are the light-theme output — toggle the theme in the toolbar to compare.
+
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}>
+  {Object.entries(tokens)
+    .filter(([name]) => name.toLowerCase().includes('color'))
+    .map(([name, value]) => (
+      <div key={name} style={{ width: 160 }}>
+        <div
+          style={{
+            height: 48,
+            borderRadius: 8,
+            border: '1px solid #e4e4e7',
+            background: String(value),
+          }}
+        />
+        <code style={{ fontSize: 12 }}>{name}</code>
+      </div>
+    ))}
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "@aning/tokens",
+  "version": "0.0.0",
+  "description": "Design tokens for the aning design system (Figma Tokens → Style Dictionary).",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./build/js/tokens.js",
+  "types": "./build/js/tokens.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/js/tokens.d.ts",
+      "import": "./build/js/tokens.js"
+    },
+    "./css": "./build/css/variables.css",
+    "./css/light": "./build/css/variables-light.css",
+    "./css/dark": "./build/css/variables-dark.css"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch",
+    "typecheck": "echo \"@aning/tokens: no typecheck (generated output)\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tokens-studio/sd-transforms": "^1.2.9",
+    "style-dictionary": "^4.3.0"
+  }
+}

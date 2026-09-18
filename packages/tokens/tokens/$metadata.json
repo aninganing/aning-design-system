@@ -1,0 +1,14 @@
+{
+  "tokenSetOrder": [
+    "core/color",
+    "core/spacing",
+    "core/typography",
+    "core/radius",
+    "core/shadow",
+    "semantic/light",
+    "semantic/dark",
+    "component/button",
+    "component/input",
+    "component/dialog"
+  ]
+}

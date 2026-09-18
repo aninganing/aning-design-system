@@ -1,0 +1,32 @@
+[
+  {
+    "id": "light",
+    "name": "Light",
+    "selectedTokenSets": {
+      "core/color": "source",
+      "core/spacing": "source",
+      "core/typography": "source",
+      "core/radius": "source",
+      "core/shadow": "source",
+      "semantic/light": "enabled",
+      "component/button": "enabled",
+      "component/input": "enabled",
+      "component/dialog": "enabled"
+    }
+  },
+  {
+    "id": "dark",
+    "name": "Dark",
+    "selectedTokenSets": {
+      "core/color": "source",
+      "core/spacing": "source",
+      "core/typography": "source",
+      "core/radius": "source",
+      "core/shadow": "source",
+      "semantic/dark": "enabled",
+      "component/button": "enabled",
+      "component/input": "enabled",
+      "component/dialog": "enabled"
+    }
+  }
+]

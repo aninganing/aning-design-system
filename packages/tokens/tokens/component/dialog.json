@@ -1,0 +1,9 @@
+{
+  "dialog": {
+    "bg": { "$type": "color", "$value": "{color.bg.default}" },
+    "overlay": { "$type": "color", "$value": "#00000080" },
+    "radius": { "$type": "borderRadius", "$value": "{radius.lg}" },
+    "shadow": { "$type": "other", "$value": "{shadow.md}" },
+    "padding": { "$type": "spacing", "$value": "{space.6}" }
+  }
+}

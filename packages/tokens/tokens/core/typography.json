@@ -1,0 +1,26 @@
+{
+  "fontSize": {
+    "50": { "$type": "fontSizes", "$value": "12px" },
+    "100": { "$type": "fontSizes", "$value": "14px" },
+    "200": { "$type": "fontSizes", "$value": "16px" },
+    "300": { "$type": "fontSizes", "$value": "18px" },
+    "400": { "$type": "fontSizes", "$value": "20px" },
+    "500": { "$type": "fontSizes", "$value": "24px" },
+    "600": { "$type": "fontSizes", "$value": "32px" }
+  },
+  "fontWeight": {
+    "regular": { "$type": "fontWeights", "$value": "400" },
+    "medium": { "$type": "fontWeights", "$value": "500" },
+    "semibold": { "$type": "fontWeights", "$value": "600" },
+    "bold": { "$type": "fontWeights", "$value": "700" }
+  },
+  "lineHeight": {
+    "tight": { "$type": "lineHeights", "$value": "1.2" },
+    "normal": { "$type": "lineHeights", "$value": "1.5" },
+    "relaxed": { "$type": "lineHeights", "$value": "1.75" }
+  },
+  "fontFamily": {
+    "sans": { "$type": "fontFamilies", "$value": "'Pretendard', -apple-system, sans-serif" },
+    "mono": { "$type": "fontFamilies", "$value": "'JetBrains Mono', monospace" }
+  }
+}
