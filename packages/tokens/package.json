@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "description": "Design tokens for the aning design system (Figma Tokens → Style Dictionary).",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aninganing/aning-design-system.git",
+    "directory": "packages/tokens"
+  },
   "type": "module",
   "main": "./build/js/tokens.js",
   "types": "./build/js/tokens.d.ts",
