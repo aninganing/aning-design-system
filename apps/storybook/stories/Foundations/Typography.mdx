@@ -3,19 +3,60 @@ import * as tokens from '@aninganing/tokens';
 
 <Meta title="Foundations/Typography" />
 
+export const byPrefix = (prefix) =>
+  Object.entries(tokens).filter(([name]) => name.startsWith(prefix));
+
+export const Label = ({ children }) => (
+  <code style={{ fontSize: 12, color: '#71717a' }}>{children}</code>
+);
+
 # Typography
 
-Font size scale generated from `core/typography.json`.
+Typography tokens generated from `core/typography.json`.
+
+예시 글자는 모두 `--font-family-sans`(Pretendard)로 렌더링한다. 글꼴 파일은 패키지에 포함되지 않고
+Storybook은 `.storybook/preview-head.html`에서 CDN으로 불러온다 — 소비자 앱도 직접 불러와야 한다
+(`packages/components/README.md` 참고).
+
+## Font family
 
 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-  {Object.entries(tokens)
-    .filter(([name]) => name.toLowerCase().startsWith('fontsize'))
-    .map(([name, value]) => (
-      <div key={name} style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
-        <span style={{ fontSize: String(value) }}>Aa 가나다</span>
-        <code style={{ fontSize: 12, color: '#71717a' }}>
-          {name}: {String(value)}
-        </code>
-      </div>
-    ))}
+  {byPrefix('fontFamily').map(([name, value]) => (
+    <div key={name} style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
+      <span style={{ fontFamily: String(value), fontSize: 20 }}>
+        다람쥐 헌 쳇바퀴에 타고파 The quick brown fox 0123456789
+      </span>
+      <Label>
+        {name}: {String(value)}
+      </Label>
+    </div>
+  ))}
+</div>
+
+`fontFamilyMono`(JetBrains Mono)는 아직 어디에서도 불러오지 않아 `monospace`로 대체된다.
+
+## Font size
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontFamily: 'var(--font-family-sans)' }}>
+  {byPrefix('fontSize').map(([name, value]) => (
+    <div key={name} style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
+      <span style={{ fontSize: String(value) }}>Aa 가나다</span>
+      <Label>
+        {name}: {String(value)}
+      </Label>
+    </div>
+  ))}
+</div>
+
+## Font weight
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontFamily: 'var(--font-family-sans)' }}>
+  {byPrefix('fontWeight').map(([name, value]) => (
+    <div key={name} style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
+      <span style={{ fontWeight: String(value), fontSize: 20 }}>Aa 가나다 디자인 시스템</span>
+      <Label>
+        {name}: {String(value)}
+      </Label>
+    </div>
+  ))}
 </div>
