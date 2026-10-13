@@ -22,6 +22,11 @@ pnpm build
 pnpm storybook
 ```
 
+## 다른 앱에서 사용하기
+
+설치(GitHub Packages 인증 포함), 스타일 import, 테마 전환 방법은
+[`packages/components/README.md`](packages/components/README.md)를 참고한다.
+
 ## 디자인 토큰
 
 `packages/tokens/tokens/**`는 현재 더미 값으로 채워져 있다. Figma에서 Tokens Studio 플러그인으로 실제 팔레트가 확정되면 GitHub 동기화를 통해 이 폴더에 직접 반영하고, `pnpm --filter @aninganing/tokens build`로 CSS 변수/타입드 상수를 재생성한다.

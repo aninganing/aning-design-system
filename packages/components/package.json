@@ -16,7 +16,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./reset.css": "./dist/reset.css"
   },
   "sideEffects": [
     "*.css"
@@ -35,31 +36,29 @@
     "test": "vitest run"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "dependencies": {
-    "@aninganing/icons": "workspace:*",
     "@aninganing/tokens": "workspace:*",
-    "@aninganing/utils": "workspace:*",
-    "@radix-ui/react-dialog": "^1.1.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@aninganing/eslint-config": "workspace:*",
+    "@aninganing/icons": "workspace:*",
     "@aninganing/stylelint-config": "workspace:*",
     "@aninganing/typescript-config": "workspace:*",
     "@storybook/react": "^8.4.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.17.0",
     "jsdom": "^25.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "stylelint": "^16.12.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.6",

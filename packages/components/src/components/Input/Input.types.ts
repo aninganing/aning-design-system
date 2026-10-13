@@ -1,8 +1,8 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 import type { input } from './Input.variants';
 
-export interface InputProps extends Omit<ComponentPropsWithoutRef<'input'>, 'size'> {
+export interface InputProps extends Omit<ComponentProps<'input'>, 'size'> {
   /**
    * 입력창 높이/패딩/폰트 크기 프리셋. 네이티브 `<input>`의 문자 폭 `size` 속성을 이 이름으로
    * 대체한다 — 너비 조절은 CSS(`className`/`style`)로 한다. `className`/`style`은 테두리를 그리는

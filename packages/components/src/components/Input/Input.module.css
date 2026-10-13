@@ -1,12 +1,11 @@
 /* 시각적 박스(테두리/배경/패딩)는 래퍼가 담당하고, 실제 <input>은 남은 폭을 채우는 투명 필드다.
    leading/trailing 요소가 입력창 "안"에 놓인 것처럼 보이게 하기 위함. */
 .base {
-  composes: focusRing from '../../styles/global.module.css';
+  composes: componentBase focusRing from '../../styles/global.module.css';
   display: flex;
   align-items: center;
   gap: var(--input-gap);
   width: 100%;
-  box-sizing: border-box;
   background-color: var(--input-bg-default);
   color: var(--input-text);
   border: 1px solid var(--input-border-default);

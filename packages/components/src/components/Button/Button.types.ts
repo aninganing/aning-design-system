@@ -1,8 +1,8 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentProps } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 import type { button } from './Button.variants';
 
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+export interface ButtonProps extends ComponentProps<'button'> {
   /**
    * 버튼의 시각적 스타일.
    * - `primary`: 화면당 하나의 주요 액션(폼 제출 등)에 사용한다.
