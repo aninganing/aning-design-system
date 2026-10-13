@@ -1,6 +1,6 @@
 {
   "name": "@aninganing/utils",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared React hooks and utilities for the aning design system.",
   "license": "UNLICENSED",
   "repository": {
