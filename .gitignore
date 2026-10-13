@@ -11,4 +11,7 @@ coverage/
 
 ## AI
 .claude
+.agents
+.codex
+AGENTS.md
 CLAUDE.md
