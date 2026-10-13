@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/blocks";
+import * as tokens from "@aninganing/tokens";
+import { ShadowSwatch } from "./helpers";
+
+<Meta title="Foundations/Shadow" />
+
+export const usage = {
+  shadowSm: "살짝 띄운 면. 테두리 없는 카드(`Card` elevated), 선택된 세그먼트 탭.",
+  shadowMd: "떠 있는 요소. 카드 hover(`Card` interactive), 다이얼로그.",
+};
+
+# Shadow
+
+Shadow tokens generated from `core/shadow.json`. 그림자는 Tokens Studio의 `boxShadow` 형식(`x`, `y`, `blur`,
+`spread`, `color`)으로 정의한다.
+
+## Core
+
+컴포넌트는 core 그림자를 직접 쓰지 않고, 아래 컴포넌트 토큰을 거쳐 참조한다.
+
+<div
+  style={{
+    display: "grid",
+    gap: 32,
+    padding: 32,
+    borderRadius: "var(--radius-lg)",
+    background: "var(--color-bg-subtle)",
+  }}
+>
+  {Object.entries(tokens)
+    .filter(([name]) => name.startsWith("shadow"))
+    .map(([name, value]) => (
+      <ShadowSwatch key={name} name={name} value={String(value)} note={usage[name]} />
+    ))}
+</div>
+
+## Component
+
+core 그림자를 참조하는 컴포넌트 토큰. 새 컴포넌트 토큰이 그림자를 참조할 때는 `$type`을 `boxShadow`로 둔다 —
+`other`로 두면 `-1px` 같은 음수 spread가 뺄셈으로 계산되어 값이 달라진다.
+
+<div
+  style={{
+    display: "grid",
+    gap: 32,
+    padding: 32,
+    borderRadius: "var(--radius-lg)",
+    background: "var(--color-bg-subtle)",
+  }}
+>
+  {Object.entries(tokens)
+    .filter(([name]) => !name.startsWith("shadow") && /Shadow/.test(name))
+    .map(([name, value]) => (
+      <ShadowSwatch key={name} name={name} value={String(value)} />
+    ))}
+</div>
+
+그림자 색은 두 테마에서 같다. 다크 테마에서는 어두운 배경 위라 그림자가 약하게 보이므로, 면을 구분해야 하는
+곳에서는 그림자에만 의존하지 말고 테두리(`color-border-default`)나 배경 단계(`color-bg-subtle`)를 함께 쓴다.
