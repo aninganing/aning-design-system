@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'vitest-axe';
@@ -28,6 +29,12 @@ describe('Button', () => {
     expect(el).toHaveAttribute('aria-busy', 'true');
     fireEvent.click(el);
     expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('forwards ref to the button element', () => {
+    const ref = createRef<HTMLButtonElement>();
+    render(<Button ref={ref}>Click me</Button>);
+    expect(ref.current).toBe(screen.getByRole('button'));
   });
 
   it('has no accessibility violations', async () => {

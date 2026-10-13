@@ -5,7 +5,7 @@ aning 디자인 시스템의 React 컴포넌트 라이브러리. 사내 전용�
 
 ## 요구 사항
 
-- React / React DOM **18 이상**
+- React / React DOM **19 이상** — React 18 앱은 `@aninganing/react@0.1.x`까지만 쓸 수 있다
 - ESM을 지원하는 번들러 (Vite, Next.js, webpack 5 등) — CommonJS 빌드는 제공하지 않는다
 - CSS import를 처리할 수 있는 번들러 설정 (Vite·Next.js는 기본 지원)
 
