@@ -9,8 +9,8 @@
       "bg": { "$type": "color", "$value": "{color.bg.subtle}" }
     },
     "shadow": {
-      "elevated": { "$type": "other", "$value": "{shadow.sm}" },
-      "hover": { "$type": "other", "$value": "{shadow.md}" }
+      "elevated": { "$type": "boxShadow", "$value": "{shadow.sm}" },
+      "hover": { "$type": "boxShadow", "$value": "{shadow.md}" }
     }
   }
 }
