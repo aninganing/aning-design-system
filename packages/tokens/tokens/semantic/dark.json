@@ -9,7 +9,8 @@
       "default": { "$type": "color", "$value": "{color.gray.50}" },
       "subtle": { "$type": "color", "$value": "{color.gray.400}" },
       "inverse": { "$type": "color", "$value": "{color.gray.900}" },
-      "danger": { "$type": "color", "$value": "{color.red.500}" }
+      "danger": { "$type": "color", "$value": "{color.red.500}" },
+      "accent": { "$type": "color", "$value": "{color.blue.300}" }
     },
     "border": {
       "default": { "$type": "color", "$value": "{color.gray.700}" },
@@ -24,6 +25,9 @@
       "default": { "$type": "color", "$value": "{color.red.500}" },
       "hover": { "$type": "color", "$value": "{color.red.600}" },
       "subtle": { "$type": "color", "$value": "{color.gray.900}" }
+    },
+    "success": {
+      "default": { "$type": "color", "$value": "{color.green.500}" }
     }
   }
 }

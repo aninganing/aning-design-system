@@ -1,0 +1,25 @@
+{
+  "badge": {
+    "radius": { "$type": "borderRadius", "$value": "{radius.sm}" },
+    "paddingX": {
+      "sm": { "$type": "spacing", "$value": "{space.1}" },
+      "md": { "$type": "spacing", "$value": "{space.2}" }
+    },
+    "neutral": {
+      "bg": { "$type": "color", "$value": "{color.bg.subtle}" },
+      "text": { "$type": "color", "$value": "{color.text.default}" },
+      "border": { "$type": "color", "$value": "{color.border.default}" }
+    },
+    "accent": {
+      "bg": { "$type": "color", "$value": "{color.accent.subtle}" },
+      "text": { "$type": "color", "$value": "{color.text.accent}" }
+    },
+    "success": {
+      "dot": { "$type": "color", "$value": "{color.success.default}" }
+    },
+    "danger": {
+      "bg": { "$type": "color", "$value": "{color.danger.default}" },
+      "text": { "$type": "color", "$value": "{color.text.inverse}" }
+    }
+  }
+}

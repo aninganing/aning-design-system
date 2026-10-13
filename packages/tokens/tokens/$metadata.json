@@ -10,6 +10,7 @@
     "component/button",
     "component/input",
     "component/dialog",
-    "component/card"
+    "component/card",
+    "component/badge"
   ]
 }
