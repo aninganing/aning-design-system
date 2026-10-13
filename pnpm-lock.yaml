@@ -228,10 +228,6 @@ importers:
         version: 4.4.0
 
   packages/utils:
-    dependencies:
-      react:
-        specifier: '>=19'
-        version: 19.3.0
     devDependencies:
       '@aninganing/eslint-config':
         specifier: workspace:*
@@ -245,6 +241,9 @@ importers:
       eslint:
         specifier: ^9.17.0
         version: 9.39.5(supports-color@8.1.1)
+      react:
+        specifier: ^19.3.0
+        version: 19.3.0
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.1(@types/node@22.20.3))(postcss@8.5.28)(supports-color@8.1.1)(typescript@5.9.3)(yaml@2.9.1)
