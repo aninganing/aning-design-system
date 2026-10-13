@@ -1,0 +1,17 @@
+/* 미리보기 배경을 디자인 시스템 테마 토큰으로 칠한다.
+   컴포넌트는 [data-theme] 토큰을 따르지만 iframe 배경은 Storybook 기본값(흰색)이라, 칠하지 않으면 다크 테마에서
+   밝은 글자가 흰 배경 위에 올라가 보이지 않는다. 배경을 칠하던 reset.css는 소비자가 선택적으로 쓰는 파일이라
+   Storybook에서는 불러오지 않는다. 칠하는 위치는 backgrounds 애드온과 같다. */
+
+/* 캔버스(스토리 단독 화면). Docs 모드에서는 Storybook이 #storybook-root에 hidden을 붙이므로 적용되지 않는다 —
+   Docs 페이지 자체는 Storybook 기본 테마로 두어 설명 글을 계속 읽을 수 있게 한다. */
+body.sb-show-main:has(#storybook-root:not([hidden])) {
+  background-color: var(--color-bg-default);
+  color: var(--color-text-default);
+}
+
+/* Docs 페이지 안의 스토리 미리보기 블록. Storybook이 런타임에 넣는 스타일보다 우선하도록 id로 범위를 좁힌다. */
+#storybook-docs .docs-story {
+  background-color: var(--color-bg-default);
+  color: var(--color-text-default);
+}
