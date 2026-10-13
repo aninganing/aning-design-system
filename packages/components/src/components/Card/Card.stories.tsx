@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Badge } from '../Badge';
 import { Card } from './Card';
 
 // 스토리 전용 placeholder 이미지 (4:3, 외부 네트워크 없이 렌더링)
@@ -6,25 +7,6 @@ const placeholder = (from: string, to: string) =>
   `data:image/svg+xml;utf8,${encodeURIComponent(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 3"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs><rect width="4" height="3" fill="url(#g)"/></svg>`,
   )}`;
-
-// Badge 컴포넌트가 생기기 전까지 쓰는 스토리 전용 뱃지
-const StoryBadge = ({ children }: { children: string }) => (
-  <span
-    style={{
-      display: 'inline-flex',
-      alignItems: 'center',
-      height: 22,
-      padding: '0 var(--space-2)',
-      borderRadius: 'var(--radius-sm)',
-      background: 'var(--color-danger-default)',
-      color: 'var(--color-text-inverse)',
-      fontSize: 'var(--font-size-50)',
-      fontWeight: 'var(--font-weight-medium)',
-    }}
-  >
-    {children}
-  </span>
-);
 
 const Meta_ = ({ children }: { children: string }) => (
   <p style={{ margin: 0, fontSize: 'var(--font-size-100)', color: 'var(--color-text-subtle)' }}>
@@ -63,7 +45,7 @@ const meta: Meta<typeof Card> = {
 ### 구성
 \`\`\`tsx
 <Card interactive>
-  <Card.Media badge={<Badge>마감 임박</Badge>}>
+  <Card.Media badge={<Badge tone="danger">마감 임박</Badge>}>
     <img src={thumbnail} alt="" />
   </Card.Media>
   <Card.Body>
@@ -114,7 +96,7 @@ const meta: Meta<typeof Card> = {
   },
   render: (args) => (
     <Card {...args}>
-      <Card.Media badge={<StoryBadge>마감 임박</StoryBadge>}>
+      <Card.Media badge={<Badge tone="danger">마감 임박</Badge>}>
         <img src={placeholder('#e4e4e7', '#a1a1aa')} alt="" />
       </Card.Media>
       <Card.Body>

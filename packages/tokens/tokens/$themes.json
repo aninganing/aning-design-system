@@ -12,7 +12,8 @@
       "component/button": "enabled",
       "component/input": "enabled",
       "component/dialog": "enabled",
-      "component/card": "enabled"
+      "component/card": "enabled",
+      "component/badge": "enabled"
     }
   },
   {
@@ -28,7 +29,8 @@
       "component/button": "enabled",
       "component/input": "enabled",
       "component/dialog": "enabled",
-      "component/card": "enabled"
+      "component/card": "enabled",
+      "component/badge": "enabled"
     }
   }
 ]

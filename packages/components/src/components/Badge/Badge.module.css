@@ -1,0 +1,54 @@
+/* 표시용 라벨이라 포커스를 받지 않는다(focusRing 없음). 누를 수 있는 요소가 필요하면 Chip을 쓴다. */
+.base {
+  composes: componentBase from '../../styles/global.module.css';
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  border-radius: var(--badge-radius);
+  font-size: var(--font-size-50);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* tones
+   팔레트 대비(4.5:1)에 맞춰 톤마다 표현을 다르게 한다.
+   - success: 초록 글자는 흰 배경 대비가 부족해 neutral 바탕 + 초록 점 + 기본 글자색으로 표현
+   - danger: red-600 on red-50(4.2:1)이 부족해 채움 + 반전 글자로 표현 */
+
+.toneNeutral,
+.toneSuccess {
+  background-color: var(--badge-neutral-bg);
+  color: var(--badge-neutral-text);
+  box-shadow: inset 0 0 0 1px var(--badge-neutral-border);
+}
+
+.toneAccent {
+  background-color: var(--badge-accent-bg);
+  color: var(--badge-accent-text);
+}
+
+.toneDanger {
+  background-color: var(--badge-danger-bg);
+  color: var(--badge-danger-text);
+}
+
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--badge-success-dot);
+}
+
+/* sizes */
+
+.sizeSm {
+  height: 18px;
+  padding: 0 var(--badge-padding-x-sm);
+}
+
+.sizeMd {
+  height: 22px;
+  padding: 0 var(--badge-padding-x-md);
+}
