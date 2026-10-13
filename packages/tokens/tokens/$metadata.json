@@ -11,6 +11,7 @@
     "component/input",
     "component/dialog",
     "component/card",
-    "component/badge"
+    "component/badge",
+    "component/chip"
   ]
 }
