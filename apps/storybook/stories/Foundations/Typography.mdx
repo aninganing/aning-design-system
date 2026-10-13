@@ -1,14 +1,7 @@
 import { Meta } from '@storybook/blocks';
-import * as tokens from '@aninganing/tokens';
+import { Label, byPrefix } from './helpers';
 
 <Meta title="Foundations/Typography" />
-
-export const byPrefix = (prefix) =>
-  Object.entries(tokens).filter(([name]) => name.startsWith(prefix));
-
-export const Label = ({ children }) => (
-  <code style={{ fontSize: 12, color: '#71717a' }}>{children}</code>
-);
 
 # Typography
 

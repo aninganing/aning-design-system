@@ -42,3 +42,17 @@ test('그림자 값의 음수 spread가 계산되지 않고 그대로 나온다'
   const css = read('./build/css/variables-light.css');
   assert.equal(cssVar(css, 'shadow-md'), '0 4px 6px -1px rgba(0, 0, 0, 0.15)');
 });
+
+// 컴포넌트 그림자 토큰을 `$type: "other"`로 두면 참조한 값을 문자열로 받아 다시 계산해 버린다.
+// 그림자를 참조하는 토큰은 `boxShadow` 타입이어야 core 값과 같게 나온다.
+test('컴포넌트 그림자 토큰이 참조한 core 그림자 값과 같다', () => {
+  const css = read('./build/css/variables-light.css');
+  const expected = {
+    'dialog-shadow': 'shadow-md',
+    'card-shadow-elevated': 'shadow-sm',
+    'card-shadow-hover': 'shadow-md',
+  };
+  for (const [name, core] of Object.entries(expected)) {
+    assert.equal(cssVar(css, name), cssVar(css, core), name);
+  }
+});

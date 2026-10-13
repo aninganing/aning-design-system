@@ -9,6 +9,7 @@
     "semantic/dark",
     "component/button",
     "component/input",
-    "component/dialog"
+    "component/dialog",
+    "component/card"
   ]
 }
