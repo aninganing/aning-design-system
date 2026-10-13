@@ -13,7 +13,8 @@
       "component/input": "enabled",
       "component/dialog": "enabled",
       "component/card": "enabled",
-      "component/badge": "enabled"
+      "component/badge": "enabled",
+      "component/chip": "enabled"
     }
   },
   {
@@ -30,7 +31,8 @@
       "component/input": "enabled",
       "component/dialog": "enabled",
       "component/card": "enabled",
-      "component/badge": "enabled"
+      "component/badge": "enabled",
+      "component/chip": "enabled"
     }
   }
 ]

@@ -1,0 +1,25 @@
+{
+  "chip": {
+    "radius": { "$type": "borderRadius", "$value": "{radius.full}" },
+    "paddingX": {
+      "sm": { "$type": "spacing", "$value": "{space.2}" },
+      "md": { "$type": "spacing", "$value": "{space.3}" }
+    },
+    "bg": {
+      "default": { "$type": "color", "$value": "{color.bg.default}" },
+      "hover": { "$type": "color", "$value": "{color.bg.subtle}" },
+      "selected": { "$type": "color", "$value": "{color.accent.subtle}" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.border.default}" },
+      "selected": { "$type": "color", "$value": "{color.accent.default}" }
+    },
+    "text": {
+      "default": { "$type": "color", "$value": "{color.text.default}" },
+      "selected": { "$type": "color", "$value": "{color.text.accent}" }
+    },
+    "remove": {
+      "hover": { "$type": "color", "$value": "{color.bg.default}" }
+    }
+  }
+}
