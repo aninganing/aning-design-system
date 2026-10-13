@@ -153,7 +153,9 @@ document.documentElement.dataset.theme = dark ? 'dark' : 'light';
 
 ## 알아둘 점
 
-- **Next.js App Router**: 현재 컴포넌트는 서버 컴포넌트에서 바로 렌더링할 수 있다. `onClick` 같은
-  이벤트 핸들러를 넘길 때는 일반 규칙대로 그 부모를 클라이언트 컴포넌트(`'use client'`)로 만든다.
+- **Next.js App Router (React Server Components)**: 번들 맨 위에 `'use client'`가 붙어 있어 모든 컴포넌트가
+  클라이언트 컴포넌트로 다뤄진다. 서버 컴포넌트에서 import해 그대로 렌더링해도 된다(서버에서 HTML로 렌더링된 뒤
+  브라우저에서 hydrate된다). 다만 `onSelectedChange` 같은 **함수 props는 서버 컴포넌트에서 넘길 수 없으므로**,
+  이벤트를 처리하는 부분은 직접 만든 클라이언트 컴포넌트 안에서 쓴다.
 - **버전**: Changesets로 관리한다. 0.x 동안에는 minor 버전에서도 동작이 바뀔 수 있으니 CHANGELOG를
   확인하고 올린다.
