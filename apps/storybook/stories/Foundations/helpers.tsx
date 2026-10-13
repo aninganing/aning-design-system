@@ -16,7 +16,29 @@ export const Label = ({ children }: { children: ReactNode }) => (
   <code style={{ fontSize: 12, color: 'var(--color-text-subtle)' }}>{children}</code>
 );
 
-export const ShadowSwatch = ({ name, value, note }: { name: string; value: string; note?: string }) => (
+export const RadiusSwatch = ({ name, value, note }: { name: string; value: string; note?: string }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+    <div
+      style={{
+        flex: 'none',
+        width: 120,
+        height: 72,
+        borderRadius: `var(${toCssVar(name)})`,
+        border: '2px solid var(--color-accent-default)',
+        background: 'var(--color-accent-subtle)',
+      }}
+    />
+    <div style={{ display: 'grid', gap: 4 }}>
+      <code style={{ fontSize: 13 }}>
+        {name} · {toCssVar(name)}
+      </code>
+      <code style={{ fontSize: 12, color: 'var(--color-text-subtle)' }}>{value}</code>
+      {note && <span style={{ fontSize: 13 }}>{note}</span>}
+    </div>
+  </div>
+);
+
+export const ShadowSwatch =({ name, value, note }: { name: string; value: string; note?: string }) => (
   <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
     <div
       style={{
