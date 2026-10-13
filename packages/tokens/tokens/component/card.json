@@ -1,0 +1,16 @@
+{
+  "card": {
+    "bg": { "$type": "color", "$value": "{color.bg.default}" },
+    "border": { "$type": "color", "$value": "{color.border.default}" },
+    "text": { "$type": "color", "$value": "{color.text.default}" },
+    "radius": { "$type": "borderRadius", "$value": "{radius.lg}" },
+    "padding": { "$type": "spacing", "$value": "{space.4}" },
+    "media": {
+      "bg": { "$type": "color", "$value": "{color.bg.subtle}" }
+    },
+    "shadow": {
+      "elevated": { "$type": "other", "$value": "{shadow.sm}" },
+      "hover": { "$type": "other", "$value": "{shadow.md}" }
+    }
+  }
+}

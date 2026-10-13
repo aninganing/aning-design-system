@@ -11,7 +11,8 @@
       "semantic/light": "enabled",
       "component/button": "enabled",
       "component/input": "enabled",
-      "component/dialog": "enabled"
+      "component/dialog": "enabled",
+      "component/card": "enabled"
     }
   },
   {
@@ -26,7 +27,8 @@
       "semantic/dark": "enabled",
       "component/button": "enabled",
       "component/input": "enabled",
-      "component/dialog": "enabled"
+      "component/dialog": "enabled",
+      "component/card": "enabled"
     }
   }
 ]
