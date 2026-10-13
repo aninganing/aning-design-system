@@ -1,8 +1,7 @@
-import { forwardRef } from 'react';
 import { IconBase, type IconProps } from './IconBase';
 
-export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-  <IconBase ref={ref} {...props}>
+export const CheckIcon = (props: IconProps) => (
+  <IconBase {...props}>
     <path
       d="M13.5 4.5L6 12L2.5 8.5"
       stroke="currentColor"
@@ -11,5 +10,4 @@ export const CheckIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
       strokeLinejoin="round"
     />
   </IconBase>
-));
-CheckIcon.displayName = 'CheckIcon';
+);

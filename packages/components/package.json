@@ -36,8 +36,8 @@
     "test": "vitest run"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "dependencies": {
     "@aninganing/tokens": "workspace:*",
@@ -52,13 +52,13 @@
     "@storybook/react": "^8.4.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.17.0",
     "jsdom": "^25.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "stylelint": "^16.12.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.6",
