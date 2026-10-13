@@ -12,6 +12,7 @@
     "component/dialog",
     "component/card",
     "component/badge",
-    "component/chip"
+    "component/chip",
+    "component/checkbox"
   ]
 }

@@ -14,7 +14,8 @@
     },
     "border": {
       "default": { "$type": "color", "$value": "{color.gray.200}" },
-      "focus": { "$type": "color", "$value": "{color.blue.500}" }
+      "focus": { "$type": "color", "$value": "{color.blue.500}" },
+      "control": { "$type": "color", "$value": "{color.gray.500}" }
     },
     "accent": {
       "default": { "$type": "color", "$value": "{color.blue.600}" },
