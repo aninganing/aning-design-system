@@ -16,6 +16,7 @@
     "component/checkbox",
     "component/skeleton",
     "component/tabs",
-    "component/radio"
+    "component/radio",
+    "component/switch"
   ]
 }
