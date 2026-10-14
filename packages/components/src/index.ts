@@ -29,3 +29,6 @@ export type { SwitchProps } from './components/Switch';
 
 export { Tabs } from './components/Tabs';
 export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
+
+export { Textarea } from './components/Textarea';
+export type { TextareaProps } from './components/Textarea';

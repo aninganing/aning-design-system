@@ -17,6 +17,7 @@
     "component/skeleton",
     "component/tabs",
     "component/radio",
-    "component/switch"
+    "component/switch",
+    "component/textarea"
   ]
 }
