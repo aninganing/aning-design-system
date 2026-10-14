@@ -24,6 +24,7 @@ const external = [
   'clsx',
   'class-variance-authority',
   '@aninganing/utils',
+  /^@radix-ui\//,
 ];
 
 export default defineConfig({

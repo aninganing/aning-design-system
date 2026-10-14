@@ -51,6 +51,7 @@ test('컴포넌트 그림자 토큰이 참조한 core 그림자 값과 같다', 
     'dialog-shadow': 'shadow-md',
     'card-shadow-elevated': 'shadow-sm',
     'card-shadow-hover': 'shadow-md',
+    'tabs-pill-shadow': 'shadow-sm',
   };
   for (const [name, core] of Object.entries(expected)) {
     assert.equal(cssVar(css, name), cssVar(css, core), name);
