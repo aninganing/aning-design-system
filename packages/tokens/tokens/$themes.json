@@ -17,7 +17,8 @@
       "component/chip": "enabled",
       "component/checkbox": "enabled",
       "component/skeleton": "enabled",
-      "component/tabs": "enabled"
+      "component/tabs": "enabled",
+      "component/radio": "enabled"
     }
   },
   {
@@ -38,7 +39,8 @@
       "component/chip": "enabled",
       "component/checkbox": "enabled",
       "component/skeleton": "enabled",
-      "component/tabs": "enabled"
+      "component/tabs": "enabled",
+      "component/radio": "enabled"
     }
   }
 ]

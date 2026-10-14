@@ -27,10 +27,12 @@ export const Checkbox = ({
   onCheckedChange,
   onChange,
   'aria-describedby': describedBy,
+  'aria-labelledby': labelledBy,
   ...props
 }: CheckboxProps) => {
   const innerRef = useRef<HTMLInputElement>(null);
   const mergedRef = useMemo(() => mergeRefs(ref, innerRef), [ref]);
+  const labelId = useId();
   const descriptionId = useId();
 
   // indeterminate는 HTML 속성이 없는 DOM 프로퍼티라 렌더링 후 직접 설정한다
@@ -44,6 +46,8 @@ export const Checkbox = ({
         ref={mergedRef}
         type="checkbox"
         className={styles.input}
+        // <label>이 설명까지 감싸고 있어 암묵적 이름에 설명이 섞이므로, 이름은 라벨 글자로만 명시한다
+        aria-labelledby={labelledBy ?? labelId}
         aria-describedby={clsx(description != null && descriptionId, describedBy) || undefined}
         onChange={(event) => {
           onChange?.(event);
@@ -56,7 +60,7 @@ export const Checkbox = ({
         <DashIcon />
       </span>
       <span className={styles.text}>
-        {label}
+        <span id={labelId}>{label}</span>
         {description != null && (
           <span id={descriptionId} className={styles.description}>
             {description}

@@ -1,0 +1,112 @@
+/* 네이티브 input type="radio"를 시각적으로만 숨기고(.input) 바로 뒤 형제 요소(.circle)로 그린다.
+   같은 name의 네이티브 radio라 그룹 안 방향키 이동·폼 제출은 브라우저가 처리한다. Checkbox와 같은 구조. */
+.root {
+  composes: componentBase from '../../styles/global.module.css';
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--radio-gap);
+  color: var(--radio-label);
+  cursor: pointer;
+}
+
+.root:has(.input:disabled) {
+  cursor: not-allowed;
+}
+
+.input {
+  composes: visuallyHidden from '../../styles/global.module.css';
+}
+
+.circle {
+  /* 크기는 테두리 포함 23px. componentBase는 루트에만 붙으므로 box-sizing을 직접 지정해, 앱이 전역 reset을
+     쓰든 안 쓰든 같은 크기로 그려지게 한다 */
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 23px;
+  height: 23px;
+  margin-top: 2px;
+  border: 1.5px solid var(--radio-border-default);
+  border-radius: 50%;
+  background-color: var(--radio-bg-default);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* 선택 시 8px 점 */
+.circle::after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--radio-dot);
+  content: '';
+  opacity: 0;
+}
+
+.input:checked + .circle {
+  border-color: var(--radio-border-checked);
+  background-color: var(--radio-bg-checked);
+}
+
+.input:checked + .circle::after {
+  opacity: 1;
+}
+
+.input:focus-visible + .circle {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.input:disabled + .circle {
+  opacity: 0.5;
+}
+
+.text {
+  display: grid;
+  font-size: var(--font-size-200);
+  line-height: var(--line-height-normal);
+}
+
+.root:has(.input:disabled) .text {
+  opacity: 0.5;
+}
+
+.description {
+  color: var(--radio-description);
+  font-size: var(--font-size-100);
+}
+
+/* RadioGroup */
+
+.group {
+  composes: componentBase from '../../styles/global.module.css';
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--radio-label);
+}
+
+.legend {
+  margin-bottom: var(--space-2);
+  padding: 0;
+  font-size: var(--font-size-100);
+  font-weight: var(--font-weight-medium);
+}
+
+.options {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.vertical .options {
+  flex-direction: column;
+}
+
+.horizontal .options {
+  flex-flow: row wrap;
+  gap: var(--space-3) var(--space-6);
+}
