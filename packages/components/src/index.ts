@@ -24,5 +24,8 @@ export type { RadioProps, RadioGroupProps } from './components/Radio';
 export { Skeleton } from './components/Skeleton';
 export type { SkeletonProps } from './components/Skeleton';
 
+export { Switch } from './components/Switch';
+export type { SwitchProps } from './components/Switch';
+
 export { Tabs } from './components/Tabs';
 export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';

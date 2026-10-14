@@ -31,6 +31,9 @@
     },
     "success": {
       "default": { "$type": "color", "$value": "{color.green.600}" }
+    },
+    "control": {
+      "thumb": { "$type": "color", "$value": "{color.white}" }
     }
   }
 }

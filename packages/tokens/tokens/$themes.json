@@ -18,7 +18,8 @@
       "component/checkbox": "enabled",
       "component/skeleton": "enabled",
       "component/tabs": "enabled",
-      "component/radio": "enabled"
+      "component/radio": "enabled",
+      "component/switch": "enabled"
     }
   },
   {
@@ -40,7 +41,8 @@
       "component/checkbox": "enabled",
       "component/skeleton": "enabled",
       "component/tabs": "enabled",
-      "component/radio": "enabled"
+      "component/radio": "enabled",
+      "component/switch": "enabled"
     }
   }
 ]

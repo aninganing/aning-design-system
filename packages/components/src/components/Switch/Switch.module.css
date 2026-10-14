@@ -1,0 +1,107 @@
+/* 설정 목록 패턴: 라벨(과 설명)은 왼쪽, 스위치는 오른쪽 끝.
+   스위치는 <button role="switch" aria-checked>이고, 썸(::before)은 켜짐·꺼짐에 따라 위치가 바뀌어
+   색에만 의존하지 않고 상태를 보여준다. */
+.root {
+  composes: componentBase from '../../styles/global.module.css';
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--switch-gap);
+  width: 100%;
+  color: var(--switch-label);
+}
+
+.text {
+  display: grid;
+  min-width: 0;
+  line-height: var(--line-height-normal);
+}
+
+.label {
+  font-size: var(--font-size-200);
+  cursor: pointer;
+}
+
+.root:has(.track:disabled) .label {
+  cursor: not-allowed;
+}
+
+.root:has(.track:disabled) .text {
+  opacity: 0.5;
+}
+
+.description {
+  color: var(--switch-description);
+  font-size: var(--font-size-100);
+}
+
+.track {
+  composes: focusRing from '../../styles/global.module.css';
+
+  /* componentBase는 루트에만 붙으므로 크기가 고정된 내부 요소는 box-sizing을 직접 지정한다 */
+  box-sizing: border-box;
+  flex: none;
+  margin: 0;
+  border: 0;
+  border-radius: var(--switch-radius);
+  background-color: var(--switch-track-off);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.track::before {
+  display: block;
+  border-radius: 50%;
+  background-color: var(--switch-thumb-bg);
+  box-shadow: var(--switch-thumb-shadow);
+  content: '';
+  transition: transform 0.15s ease;
+}
+
+.track[aria-checked='true'] {
+  background-color: var(--switch-track-on);
+}
+
+.track:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 썸은 의사 요소라 componentBase의 모션 감소 규칙(.componentBase *)에 걸리지 않으므로 따로 끈다 */
+@media (prefers-reduced-motion: reduce) {
+  .track::before {
+    transition: none;
+  }
+}
+
+/* sizes — 트랙 높이 sm 20px / md 26px */
+
+.sizeSm {
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+}
+
+.sizeSm::before {
+  width: 16px;
+  height: 16px;
+}
+
+.sizeSm[aria-checked='true']::before {
+  transform: translateX(16px);
+}
+
+.sizeMd {
+  width: 44px;
+  height: 26px;
+  padding: 3px;
+}
+
+.sizeMd::before {
+  width: 20px;
+  height: 20px;
+}
+
+.sizeMd[aria-checked='true']::before {
+  transform: translateX(18px);
+}
