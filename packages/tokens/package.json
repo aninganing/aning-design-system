@@ -32,7 +32,8 @@
   "scripts": {
     "build": "node build.mjs",
     "dev": "node build.mjs --watch",
-    "typecheck": "echo \"@aninganing/tokens: no typecheck (generated output)\""
+    "typecheck": "echo \"@aninganing/tokens: no typecheck (generated output)\"",
+    "test": "node --test"
   },
   "devDependencies": {
     "@tokens-studio/sd-transforms": "^2.0.3",

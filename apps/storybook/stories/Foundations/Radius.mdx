@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/blocks';
+import * as tokens from '@aninganing/tokens';
+import { RadiusSwatch } from './helpers';
+
+<Meta title="Foundations/Radius" />
+
+export const usage = {
+  radiusNone: '모서리를 둥글게 하지 않는 면.',
+  radiusSm: '표시용 라벨(Badge), 체크박스, 툴팁.',
+  radiusMd: '조작 컨트롤(Button, Input).',
+  radiusLg: '내용을 담는 면(Card, Dialog).',
+  radiusFull: '누를 수 있는 알약형 요소(Chip, Switch), 원형 요소.',
+};
+
+# Radius
+
+Border radius tokens generated from `core/radius.json`.
+
+## 모양으로 역할을 구분한다
+
+모서리 크기로 요소의 역할을 구분한다. 같은 역할의 요소는 같은 radius를 쓴다.
+
+- **알약형(`full`)** — 누를 수 있는 토글·필터. 표시용 라벨(Badge, `sm`)과 모양으로 구분해 누를 수 있음을 알린다.
+- **컨트롤(`md`)** — 버튼, 입력창처럼 조작하는 요소.
+- **면(`lg`)** — 카드, 다이얼로그처럼 다른 요소를 담는 면.
+
+## Core
+
+컴포넌트는 core radius를 직접 쓰지 않고, 아래 컴포넌트 토큰을 거쳐 참조한다.
+
+<div style={{ display: 'grid', gap: 24 }}>
+  {Object.entries(tokens)
+    .filter(([name]) => name.startsWith('radius'))
+    .map(([name, value]) => (
+      <RadiusSwatch key={name} name={name} value={String(value)} note={usage[name]} />
+    ))}
+</div>
+
+## Component
+
+core radius를 참조하는 컴포넌트 토큰.
+
+<div style={{ display: 'grid', gap: 24 }}>
+  {Object.entries(tokens)
+    .filter(([name]) => !name.startsWith('radius') && /Radius$/.test(name))
+    .map(([name, value]) => (
+      <RadiusSwatch key={name} name={name} value={String(value)} />
+    ))}
+</div>

@@ -1,0 +1,14 @@
+{
+  "skeleton": {
+    "bg": { "$type": "color", "$value": "{color.bg.muted}" },
+    "highlight": { "$type": "color", "$value": "{color.bg.muted-highlight}" },
+    "radius": {
+      "text": { "$type": "borderRadius", "$value": "{radius.sm}" },
+      "rect": { "$type": "borderRadius", "$value": "{radius.md}" }
+    },
+    "text": {
+      "height": { "$type": "dimension", "$value": "{fontSize.100}" },
+      "gap": { "$type": "spacing", "$value": "{space.2}" }
+    }
+  }
+}

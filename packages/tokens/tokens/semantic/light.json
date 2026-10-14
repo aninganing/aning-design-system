@@ -3,17 +3,21 @@
     "bg": {
       "default": { "$type": "color", "$value": "{color.white}" },
       "subtle": { "$type": "color", "$value": "{color.gray.50}" },
-      "inverse": { "$type": "color", "$value": "{color.gray.900}" }
+      "inverse": { "$type": "color", "$value": "{color.gray.900}" },
+      "muted": { "$type": "color", "$value": "{color.gray.100}" },
+      "muted-highlight": { "$type": "color", "$value": "{color.white}" }
     },
     "text": {
       "default": { "$type": "color", "$value": "{color.gray.900}" },
       "subtle": { "$type": "color", "$value": "{color.gray.500}" },
       "inverse": { "$type": "color", "$value": "{color.white}" },
-      "danger": { "$type": "color", "$value": "{color.red.600}" }
+      "danger": { "$type": "color", "$value": "{color.red.600}" },
+      "accent": { "$type": "color", "$value": "{color.blue.600}" }
     },
     "border": {
       "default": { "$type": "color", "$value": "{color.gray.200}" },
-      "focus": { "$type": "color", "$value": "{color.blue.500}" }
+      "focus": { "$type": "color", "$value": "{color.blue.500}" },
+      "control": { "$type": "color", "$value": "{color.gray.500}" }
     },
     "accent": {
       "default": { "$type": "color", "$value": "{color.blue.600}" },
@@ -24,6 +28,9 @@
       "default": { "$type": "color", "$value": "{color.red.600}" },
       "hover": { "$type": "color", "$value": "{color.red.700}" },
       "subtle": { "$type": "color", "$value": "{color.red.50}" }
+    },
+    "success": {
+      "default": { "$type": "color", "$value": "{color.green.600}" }
     }
   }
 }

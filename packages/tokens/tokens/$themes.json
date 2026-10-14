@@ -11,7 +11,13 @@
       "semantic/light": "enabled",
       "component/button": "enabled",
       "component/input": "enabled",
-      "component/dialog": "enabled"
+      "component/dialog": "enabled",
+      "component/card": "enabled",
+      "component/badge": "enabled",
+      "component/chip": "enabled",
+      "component/checkbox": "enabled",
+      "component/skeleton": "enabled",
+      "component/tabs": "enabled"
     }
   },
   {
@@ -26,7 +32,13 @@
       "semantic/dark": "enabled",
       "component/button": "enabled",
       "component/input": "enabled",
-      "component/dialog": "enabled"
+      "component/dialog": "enabled",
+      "component/card": "enabled",
+      "component/badge": "enabled",
+      "component/chip": "enabled",
+      "component/checkbox": "enabled",
+      "component/skeleton": "enabled",
+      "component/tabs": "enabled"
     }
   }
 ]

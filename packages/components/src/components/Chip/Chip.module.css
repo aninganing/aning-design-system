@@ -1,0 +1,89 @@
+/* 누를 수 있는 알약형 컨트롤. radius-full로 표시용 라벨(Badge, radius-sm)과 모양을 구분한다.
+   - 토글형: 칩 자체가 <button aria-pressed>
+   - 제거형: 칩은 <span>이고, 안의 × 버튼만 누를 수 있다(버튼 안에 버튼을 둘 수 없으므로) */
+.base {
+  composes: componentBase from '../../styles/global.module.css';
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  border: 1px solid var(--chip-border-default);
+  border-radius: var(--chip-radius);
+  background-color: var(--chip-bg-default);
+  color: var(--chip-text-default);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.toggle {
+  composes: focusRing from '../../styles/global.module.css';
+  cursor: pointer;
+}
+
+.toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.toggle:hover:not(:disabled, [aria-pressed='true']) {
+  background-color: var(--chip-bg-hover);
+}
+
+.selected {
+  border-color: var(--chip-border-selected);
+  background-color: var(--chip-bg-selected);
+  color: var(--chip-text-selected);
+  font-weight: var(--font-weight-medium);
+}
+
+.remove {
+  composes: focusRing from '../../styles/global.module.css';
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 보이는 원은 20px이지만 누를 수 있는 영역은 칩 높이만큼 넓힌다 */
+.remove::after {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  content: '';
+}
+
+.remove:hover {
+  background-color: var(--chip-remove-hover);
+}
+
+/* sizes */
+
+.sizeSm {
+  height: 28px;
+  padding-inline: var(--chip-padding-x-sm);
+  font-size: var(--font-size-50);
+}
+
+.sizeMd {
+  height: 32px;
+  padding-inline: var(--chip-padding-x-md);
+  font-size: var(--font-size-100);
+}
+
+/* 제거형: × 버튼 쪽 여백을 줄여 버튼이 칩 끝에 붙어 보이게 한다 (크기별 padding보다 뒤에 둔다) */
+.removable.sizeSm,
+.removable.sizeMd {
+  padding-right: var(--space-1);
+}

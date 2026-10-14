@@ -1,0 +1,22 @@
+{
+  "tabs": {
+    "indicator": { "$type": "color", "$value": "{color.accent.default}" },
+    "border": { "$type": "color", "$value": "{color.border.default}" },
+    "text": {
+      "default": { "$type": "color", "$value": "{color.text.subtle}" },
+      "selected": { "$type": "color", "$value": "{color.text.default}" }
+    },
+    "paddingX": { "$type": "spacing", "$value": "{space.4}" },
+    "radius": { "$type": "borderRadius", "$value": "{radius.sm}" },
+    "pill": {
+      "track": { "$type": "color", "$value": "{color.bg.subtle}" },
+      "selected": { "$type": "color", "$value": "{color.bg.default}" },
+      "shadow": { "$type": "boxShadow", "$value": "{shadow.sm}" },
+      "radius": { "$type": "borderRadius", "$value": "{radius.md}" },
+      "paddingX": { "$type": "spacing", "$value": "{space.3}" }
+    },
+    "panel": {
+      "paddingY": { "$type": "spacing", "$value": "{space.4}" }
+    }
+  }
+}

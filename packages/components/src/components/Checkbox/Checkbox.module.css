@@ -1,0 +1,94 @@
+/* 네이티브 input type="checkbox"를 시각적으로만 숨기고(.input) 바로 뒤 형제 요소(.box)로 그린다.
+   키보드·폼 제출·indeterminate·disabled는 네이티브 동작을 그대로 쓰고, 모양만 :checked 등 선택자로 입힌다. */
+.root {
+  composes: componentBase from '../../styles/global.module.css';
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--checkbox-gap);
+  color: var(--checkbox-label);
+  cursor: pointer;
+}
+
+.root:has(.input:disabled) {
+  cursor: not-allowed;
+}
+
+.input {
+  composes: visuallyHidden from '../../styles/global.module.css';
+}
+
+.box {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: 1.5px solid var(--checkbox-border-default);
+  border-radius: var(--checkbox-radius);
+  background-color: var(--checkbox-bg-default);
+  color: var(--checkbox-icon);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.icon {
+  display: none;
+}
+
+.input:checked + .box,
+.input:indeterminate + .box {
+  border-color: var(--checkbox-border-checked);
+  background-color: var(--checkbox-bg-checked);
+}
+
+.input:checked:not(:indeterminate) + .box .iconCheck,
+.input:indeterminate + .box .iconDash {
+  display: block;
+}
+
+.input:focus-visible + .box {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.input:disabled + .box {
+  opacity: 0.5;
+}
+
+.text {
+  display: grid;
+  font-size: var(--font-size-200);
+  line-height: var(--line-height-normal);
+}
+
+.root:has(.input:disabled) .text {
+  opacity: 0.5;
+}
+
+.description {
+  color: var(--checkbox-description);
+  font-size: var(--font-size-100);
+}
+
+/* CheckboxGroup */
+
+.group {
+  composes: componentBase from '../../styles/global.module.css';
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--checkbox-label);
+}
+
+.legend {
+  margin-bottom: var(--space-2);
+  padding: 0;
+  font-size: var(--font-size-100);
+  font-weight: var(--font-weight-medium);
+}

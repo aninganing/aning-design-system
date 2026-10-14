@@ -1,0 +1,110 @@
+/* 탭 동작(roving tabindex, 방향키·Home·End, 활성화 방식, aria-* 연결)은 Radix Tabs가 맡고 여기서는 모양만 입힌다.
+   선택 상태는 Radix가 붙이는 [data-state='active']로 표현한다.
+   규칙 순서: 기본 → variant별 기본 → 상태(선택·hover) → variant별 상태 → 포커스 (stylelint no-descending-specificity) */
+.root {
+  composes: componentBase from '../../styles/global.module.css';
+  color: var(--tabs-text-selected);
+}
+
+.list {
+  display: flex;
+}
+
+.tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--tabs-text-default);
+  font-size: var(--font-size-100);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 탭 라벨 뒤 개수(후기 128) */
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+.panel {
+  composes: focusRing from '../../styles/global.module.css';
+  padding-block: var(--tabs-panel-padding-y);
+  font-size: var(--font-size-200);
+}
+
+/* variant별 기본 — line: 콘텐츠 섹션 전환 / pill: 정렬·보기 방식 같은 세그먼트 */
+
+.variantLine .list {
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--tabs-border);
+}
+
+.variantPill .list {
+  display: inline-flex;
+  padding: var(--space-1);
+  border-radius: var(--tabs-pill-radius);
+  background-color: var(--tabs-pill-track);
+}
+
+.variantLine .tab {
+  height: 44px;
+  padding-inline: var(--tabs-padding-x);
+}
+
+.variantPill .tab {
+  height: 32px;
+  padding-inline: var(--tabs-pill-padding-x);
+  border-radius: var(--tabs-radius);
+}
+
+/* 상태 */
+
+.tab[data-state='active'] {
+  color: var(--tabs-text-selected);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tab:hover:not(:disabled) {
+  color: var(--tabs-text-selected);
+}
+
+.variantLine .tab[data-state='active']::after {
+  position: absolute;
+  right: var(--space-2);
+  bottom: -1px;
+  left: var(--space-2);
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--tabs-indicator);
+  content: '';
+}
+
+.variantPill .tab[data-state='active'] {
+  background-color: var(--tabs-pill-selected);
+  box-shadow: var(--tabs-pill-shadow);
+}
+
+/* 포커스 — line은 탭이 밑줄 영역까지 차지하므로 링을 안쪽에 그린다 */
+
+.variantLine .tab:focus-visible {
+  border-radius: var(--tabs-radius);
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.variantPill .tab:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
