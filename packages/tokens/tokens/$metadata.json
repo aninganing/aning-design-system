@@ -13,6 +13,7 @@
     "component/card",
     "component/badge",
     "component/chip",
-    "component/checkbox"
+    "component/checkbox",
+    "component/skeleton"
   ]
 }
