@@ -17,3 +17,6 @@ export type { ChipProps, ToggleChipProps, RemovableChipProps } from './component
 
 export { Input } from './components/Input';
 export type { InputProps } from './components/Input';
+
+export { Skeleton } from './components/Skeleton';
+export type { SkeletonProps } from './components/Skeleton';

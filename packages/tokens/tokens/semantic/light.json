@@ -3,7 +3,9 @@
     "bg": {
       "default": { "$type": "color", "$value": "{color.white}" },
       "subtle": { "$type": "color", "$value": "{color.gray.50}" },
-      "inverse": { "$type": "color", "$value": "{color.gray.900}" }
+      "inverse": { "$type": "color", "$value": "{color.gray.900}" },
+      "muted": { "$type": "color", "$value": "{color.gray.100}" },
+      "muted-highlight": { "$type": "color", "$value": "{color.white}" }
     },
     "text": {
       "default": { "$type": "color", "$value": "{color.gray.900}" },
