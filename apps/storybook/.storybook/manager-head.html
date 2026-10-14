@@ -1,0 +1,21 @@
+<!--
+  Storybook 8.6의 알려진 manager 로그 하나만 콘솔에서 걸러낸다.
+
+  툴바에서 테마(globals)를 바꾸면 미리보기 iframe이 다시 렌더링되는 사이에 보낸 이벤트(storyRenderPhaseChanged 등)의
+  출처 iframe을 manager가 찾지 못해 "... but was unable to determine the source of the event" 에러를 찍고 그 이벤트만
+  버린다. 테마 전환 등 동작에는 영향이 없고, Storybook 10.6.2에도 같은 코드가 남아 있어 업그레이드로는 사라지지 않는다.
+  참고: https://github.com/storybookjs/storybook/issues/29007
+
+  Storybook 로그 레벨을 낮추면(LOGLEVEL=silent) 다른 경고까지 모두 사라지므로, 이 문구가 든 로그만 버린다.
+  Storybook을 업그레이드할 때 이 메시지가 사라졌는지 확인하고, 사라졌으면 이 파일을 지운다.
+-->
+<script>
+  (() => {
+    const IGNORED = 'but was unable to determine the source of the event';
+    const original = console.error;
+    console.error = (...args) => {
+      if (typeof args[0] === 'string' && args[0].includes(IGNORED)) return;
+      original.apply(console, args);
+    };
+  })();
+</script>
