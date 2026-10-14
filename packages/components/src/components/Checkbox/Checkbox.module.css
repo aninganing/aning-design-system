@@ -19,11 +19,14 @@
 }
 
 .box {
+  /* 크기는 테두리 포함 23px. componentBase는 루트에만 붙으므로 box-sizing을 직접 지정해, 앱이 전역 reset을
+     쓰든 안 쓰든 같은 크기로 그려지게 한다 */
+  box-sizing: border-box;
   display: grid;
   place-items: center;
   flex: none;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   margin-top: 2px;
   border: 1.5px solid var(--checkbox-border-default);
   border-radius: var(--checkbox-radius);
