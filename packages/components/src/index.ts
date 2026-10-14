@@ -20,3 +20,6 @@ export type { InputProps } from './components/Input';
 
 export { Skeleton } from './components/Skeleton';
 export type { SkeletonProps } from './components/Skeleton';
+
+export { Tabs } from './components/Tabs';
+export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
