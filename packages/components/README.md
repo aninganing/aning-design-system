@@ -127,7 +127,7 @@ export function SearchForm() {
 }
 ```
 
-각 컴포넌트의 props와 예시는 Storybook을 참고한다.
+각 컴포넌트의 props와 예시는 [Storybook](https://aning-design-system.vercel.app/)을 참고한다.
 
 ### 다크 테마
 
