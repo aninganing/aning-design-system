@@ -20,7 +20,8 @@
       "component/tabs": "enabled",
       "component/radio": "enabled",
       "component/switch": "enabled",
-      "component/textarea": "enabled"
+      "component/textarea": "enabled",
+      "component/tooltip": "enabled"
     }
   },
   {
@@ -44,7 +45,8 @@
       "component/tabs": "enabled",
       "component/radio": "enabled",
       "component/switch": "enabled",
-      "component/textarea": "enabled"
+      "component/textarea": "enabled",
+      "component/tooltip": "enabled"
     }
   }
 ]
