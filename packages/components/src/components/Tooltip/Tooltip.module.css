@@ -1,0 +1,45 @@
+/* 열림·닫힘, 위치 계산(화면 가장자리에서 뒤집기), 포털, Esc·포커스 처리는 Radix Tooltip이 맡고 모양만 입힌다.
+   두 테마 모두 반전 면(bg-inverse 위 text-inverse)이라 배경과 확실히 구분된다. */
+.content {
+  composes: componentBase from '../../styles/global.module.css';
+  z-index: 1000;
+  max-width: 240px;
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--tooltip-radius);
+  background-color: var(--tooltip-bg);
+  box-shadow: var(--tooltip-shadow);
+  color: var(--tooltip-text);
+  font-size: var(--font-size-50);
+  line-height: var(--line-height-normal);
+  overflow-wrap: break-word;
+  animation: fade-in 0.12s ease-out;
+}
+
+/* 트리거 쪽에서 살짝 밀려 나오듯 등장한다 */
+.content[data-side='top'] {
+  --tooltip-from: translateY(2px);
+}
+
+.content[data-side='bottom'] {
+  --tooltip-from: translateY(-2px);
+}
+
+.content[data-side='left'] {
+  --tooltip-from: translateX(2px);
+}
+
+.content[data-side='right'] {
+  --tooltip-from: translateX(-2px);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: var(--tooltip-from, none);
+  }
+}
+
+/* 5px 화살표. Radix Arrow(svg)의 fill을 툴팁 면 색과 맞춘다 */
+.arrow {
+  fill: var(--tooltip-bg);
+}

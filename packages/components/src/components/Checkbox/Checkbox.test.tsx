@@ -33,9 +33,12 @@ describe('Checkbox', () => {
     expect(el.indeterminate).toBe(false);
   });
 
-  it('links the description with aria-describedby', () => {
+  it('names by the label only and links the description with aria-describedby', () => {
     render(<Checkbox label="마케팅 알림" description="이벤트 소식을 받는다" />);
-    expect(screen.getByRole('checkbox')).toHaveAccessibleDescription('이벤트 소식을 받는다');
+    const el = screen.getByRole('checkbox');
+    // 설명이 이름에도 섞이면 스크린 리더가 같은 내용을 두 번 읽는다
+    expect(el).toHaveAccessibleName('마케팅 알림');
+    expect(el).toHaveAccessibleDescription('이벤트 소식을 받는다');
   });
 
   it('does not toggle when disabled', async () => {

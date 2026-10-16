@@ -17,7 +17,11 @@
       "component/chip": "enabled",
       "component/checkbox": "enabled",
       "component/skeleton": "enabled",
-      "component/tabs": "enabled"
+      "component/tabs": "enabled",
+      "component/radio": "enabled",
+      "component/switch": "enabled",
+      "component/textarea": "enabled",
+      "component/tooltip": "enabled"
     }
   },
   {
@@ -38,7 +42,11 @@
       "component/chip": "enabled",
       "component/checkbox": "enabled",
       "component/skeleton": "enabled",
-      "component/tabs": "enabled"
+      "component/tabs": "enabled",
+      "component/radio": "enabled",
+      "component/switch": "enabled",
+      "component/textarea": "enabled",
+      "component/tooltip": "enabled"
     }
   }
 ]

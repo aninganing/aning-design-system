@@ -1,0 +1,81 @@
+/* Input과 같은 필드 모양(textarea.* 토큰은 input.* 토큰을 참조)에, 아래 줄에 도움말과 글자 수 카운터를 둔다.
+   Input과 달리 앞뒤 요소가 없어 <textarea> 자체가 테두리를 그리는 필드다. */
+.root {
+  composes: componentBase from '../../styles/global.module.css';
+  display: grid;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.field {
+  composes: focusRing from '../../styles/global.module.css';
+
+  /* componentBase는 루트에만 붙으므로 크기를 계산하는 내부 요소는 box-sizing을 직접 지정한다 */
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: var(--textarea-padding-y) var(--textarea-padding-x);
+  border: 1px solid var(--textarea-border-default);
+  border-radius: var(--textarea-radius);
+  background-color: var(--textarea-bg);
+  color: var(--textarea-text);
+  font: inherit;
+  font-size: var(--font-size-200);
+  line-height: var(--line-height-normal);
+
+  /* 높이는 height prop(기본 96px)으로 정하고, 사용자가 손잡이로 바꾸지 못하게 한다 */
+  resize: none;
+  transition: border-color 0.15s ease;
+}
+
+.field::placeholder {
+  color: var(--textarea-placeholder);
+}
+
+.field:focus {
+  border-color: var(--textarea-border-focus);
+}
+
+.field:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* autoResize: 높이는 스크립트가 내용에 맞춰 정하므로 스크롤바를 숨긴다(maxRows를 넘으면 스크립트가 다시 켠다) */
+.autoResize {
+  overflow-y: hidden;
+}
+
+.stateError,
+.stateError:focus {
+  border-color: var(--textarea-border-error);
+}
+
+/* 도움말과 카운터를 한 줄에 */
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--font-size-50);
+  line-height: var(--line-height-normal);
+}
+
+.description {
+  color: var(--textarea-description);
+}
+
+.count {
+  flex: none;
+  margin-left: auto;
+  color: var(--textarea-count-default);
+  font-variant-numeric: tabular-nums;
+}
+
+.countLimit {
+  color: var(--textarea-count-limit);
+}
+
+.srOnly {
+  composes: visuallyHidden from '../../styles/global.module.css';
+}

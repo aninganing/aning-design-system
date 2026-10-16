@@ -15,6 +15,10 @@
     "component/chip",
     "component/checkbox",
     "component/skeleton",
-    "component/tabs"
+    "component/tabs",
+    "component/radio",
+    "component/switch",
+    "component/textarea",
+    "component/tooltip"
   ]
 }
