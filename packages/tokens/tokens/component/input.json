@@ -4,7 +4,7 @@
       "default": { "$type": "color", "$value": "{color.bg.default}" }
     },
     "border": {
-      "default": { "$type": "color", "$value": "{color.border.default}" },
+      "default": { "$type": "color", "$value": "{color.border.control}" },
       "focus": { "$type": "color", "$value": "{color.border.focus}" },
       "error": { "$type": "color", "$value": "{color.danger.default}" }
     },

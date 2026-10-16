@@ -52,7 +52,7 @@
     "@aninganing/icons": "workspace:*",
     "@aninganing/stylelint-config": "workspace:*",
     "@aninganing/typescript-config": "workspace:*",
-    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "10.6.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "14.6.7",
