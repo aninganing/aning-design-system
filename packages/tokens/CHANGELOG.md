@@ -1,5 +1,14 @@
 # @aninganing/tokens
 
+## 0.3.0
+
+### Minor Changes
+
+- bb5dc63: Radio·RadioGroup 컴포넌트 추가. 네이티브 radio 기반으로 같은 `name`을 공유해 방향키 이동·폼 제출을 브라우저가 처리하고, `RadioGroup`(`fieldset` + `legend`, `role="radiogroup"`)이 `value`/`defaultValue`/`onValueChange`, `orientation`, `required`를 관리한다. `radio.*` 컴포넌트 토큰 추가.
+- 4f4950c: Switch 컴포넌트 추가 (`<button role="switch" aria-checked>`, `label`·`description`, `checked`/`defaultChecked`/`onCheckedChange`, `size` sm/md). 라벨은 `<label htmlFor>`로 연결해 눌러도 토글되고, 설명은 이름에 섞이지 않게 `aria-describedby`로 연결한다. semantic 토큰 `color.control.thumb`(두 테마 흰색)과 `switch.*` 컴포넌트 토큰 추가.
+- af0e65f: Textarea 컴포넌트 추가 (`error`, `description`, `height`(기본 96px, 손잡이로 크기 조절 불가), `maxLength` 카운터·`showCount`, `autoResize`·`maxRows`). 카운터는 `aria-describedby`로 연결하고 한도에 닿았을 때만 live 영역으로 알린다. `textarea.*` 컴포넌트 토큰은 `input.*` 토큰을 참조해 Input과 함께 바뀐다.
+- c2fca99: Tooltip 컴포넌트 추가 (Radix Tooltip 기반). `content`, `side`, `align`, `delay`(기본 300ms), `open`/`defaultOpen`/`onOpenChange`. 두 테마 모두 반전 면(bg-inverse + text-inverse), 5px 화살표, 최대 너비 240px. hover·포커스로 열리고 Esc로 닫히며 트리거의 `aria-describedby`로 연결된다. `@radix-ui/react-tooltip`(1.2.16 고정)을 dependencies에 추가하고 `tooltip.*` 컴포넌트 토큰을 추가했다.
+
 ## 0.2.0
 
 ### Minor Changes
