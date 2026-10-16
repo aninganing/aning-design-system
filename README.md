@@ -22,6 +22,13 @@ pnpm build
 pnpm storybook
 ```
 
+## Storybook
+
+컴포넌트 문서와 예시: **https://aning-design-system.vercel.app/**
+
+`main` 브랜치가 운영 URL로 배포되고, PR마다 Vercel 미리보기 URL이 생성된다(배포 설정은 루트 `vercel.json`).
+로컬에서는 `pnpm storybook`(localhost:6006)으로 띄운다.
+
 ## 다른 앱에서 사용하기
 
 설치(GitHub Packages 인증 포함), 스타일 import, 테마 전환 방법은
