@@ -9,6 +9,10 @@ overrides:
   # jsdom(테스트 환경)의 선택자 엔진. 2.2.25부터 :modal 검사가 :fullscreen 검사로 자기 자신을 다시 호출해
   # floating-ui(Radix Tooltip 위치 계산)의 element.matches(':modal') 한 번에 수 초가 걸린다. 고쳐진 버전이 나오면 제거한다.
   nwsapi: 2.2.24
+  # 공급망 위험을 줄이려고 배포 2주가 안 된 하위 의존성은 바로 이전 버전으로 둔다(Storybook 10.6.1 업그레이드 시점).
+  # 2주가 지나면 제거한다.
+  '@storybook/icons@2.2.0': 2.1.0
+  '@napi-rs/wasm-runtime@1.2.5': 1.2.4
 allowBuilds:
   '@bundled-es-modules/glob': true
   esbuild: true
