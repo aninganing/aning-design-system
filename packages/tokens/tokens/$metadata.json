@@ -18,6 +18,7 @@
     "component/tabs",
     "component/radio",
     "component/switch",
-    "component/textarea"
+    "component/textarea",
+    "component/tooltip"
   ]
 }

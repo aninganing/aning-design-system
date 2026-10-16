@@ -32,3 +32,6 @@ export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './c
 
 export { Textarea } from './components/Textarea';
 export type { TextareaProps } from './components/Textarea';
+
+export { Tooltip } from './components/Tooltip';
+export type { TooltipProps } from './components/Tooltip';
