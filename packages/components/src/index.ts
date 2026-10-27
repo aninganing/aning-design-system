@@ -15,6 +15,9 @@ export type { CheckboxProps, CheckboxGroupProps } from './components/Checkbox';
 export { Chip } from './components/Chip';
 export type { ChipProps, ToggleChipProps, RemovableChipProps } from './components/Chip';
 
+export { IconButton } from './components/IconButton';
+export type { IconButtonProps } from './components/IconButton';
+
 export { Input } from './components/Input';
 export type { InputProps } from './components/Input';
 
