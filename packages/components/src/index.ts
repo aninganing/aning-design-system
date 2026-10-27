@@ -15,6 +15,15 @@ export type { CheckboxProps, CheckboxGroupProps } from './components/Checkbox';
 export { Chip } from './components/Chip';
 export type { ChipProps, ToggleChipProps, RemovableChipProps } from './components/Chip';
 
+export { Field } from './components/Field';
+export type {
+  FieldRootProps,
+  FieldLabelProps,
+  FieldControlProps,
+  FieldHelperProps,
+  FieldErrorProps,
+} from './components/Field';
+
 export { IconButton } from './components/IconButton';
 export type { IconButtonProps } from './components/IconButton';
 

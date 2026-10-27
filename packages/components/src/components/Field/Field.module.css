@@ -1,0 +1,46 @@
+/* 라벨 · 컨트롤 · 헬퍼(또는 에러)를 세로로 쌓는다. 필드 사이 간격은 폼 쪽에서 준다(권장 space-4). */
+.base {
+  composes: componentBase from '../../styles/global.module.css';
+  display: grid;
+  gap: var(--field-gap);
+  width: 100%;
+  max-width: 320px;
+}
+
+.fullWidth {
+  max-width: none;
+}
+
+.label {
+  justify-self: start;
+  color: var(--field-label);
+  font-size: var(--font-size-100);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.required {
+  margin-left: 2px;
+  color: var(--field-required);
+}
+
+.optional {
+  margin-left: var(--space-1);
+  color: var(--field-helper);
+  font-weight: var(--font-weight-regular);
+}
+
+.helper,
+.error {
+  margin: 0;
+  font-size: var(--font-size-50);
+  line-height: var(--line-height-normal);
+}
+
+.helper {
+  color: var(--field-helper);
+}
+
+.error {
+  color: var(--field-error);
+}
