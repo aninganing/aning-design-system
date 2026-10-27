@@ -76,9 +76,10 @@
   font-size: var(--font-size-300);
 }
 
-/* state */
+/* state — error prop 외에 Field.Control이 얹는 aria-invalid로도 에러 테두리가 된다 */
 
 .stateError,
-.stateError:focus-within {
+.stateError:focus-within,
+.base:has(.field[aria-invalid='true']) {
   border-color: var(--input-border-error);
 }

@@ -23,7 +23,8 @@
       "component/textarea": "enabled",
       "component/tooltip": "enabled",
       "component/icon-button": "enabled",
-      "component/spinner": "enabled"
+      "component/spinner": "enabled",
+      "component/field": "enabled"
     }
   },
   {
@@ -50,7 +51,8 @@
       "component/textarea": "enabled",
       "component/tooltip": "enabled",
       "component/icon-button": "enabled",
-      "component/spinner": "enabled"
+      "component/spinner": "enabled",
+      "component/field": "enabled"
     }
   }
 ]

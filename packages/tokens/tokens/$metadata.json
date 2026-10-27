@@ -21,6 +21,7 @@
     "component/textarea",
     "component/tooltip",
     "component/icon-button",
-    "component/spinner"
+    "component/spinner",
+    "component/field"
   ]
 }
