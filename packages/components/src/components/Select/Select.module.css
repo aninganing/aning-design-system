@@ -1,0 +1,144 @@
+/* 열림·닫힘, 포털, 위치 계산, 키보드 탐색(화살표·글자 입력·Home·End), 포커스 복귀는 Radix Select가 맡고 모양만 입힌다.
+   트리거는 Input과 같은 높이·테두리·포커스·에러·비활성 표현을 쓴다. */
+.trigger {
+  composes: componentBase focusRing from '../../styles/global.module.css';
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  margin: 0;
+  border: 1px solid var(--select-border-default);
+  border-radius: var(--select-radius);
+  background-color: var(--select-bg);
+  color: var(--select-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.trigger:focus,
+.trigger[data-state='open'] {
+  border-color: var(--select-border-focus);
+}
+
+/* invalid prop 또는 Field.Control이 얹는 aria-invalid */
+.trigger[aria-invalid='true'] {
+  border-color: var(--select-border-error);
+}
+
+.trigger:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trigger[data-placeholder] .value {
+  color: var(--select-placeholder);
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--select-icon);
+}
+
+/* sizes — Input과 같은 단계 */
+
+.sizeSm {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-100);
+}
+
+.sizeMd {
+  height: 40px;
+  padding: 0 var(--select-padding-x);
+  font-size: var(--font-size-200);
+}
+
+.sizeLg {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: var(--font-size-300);
+}
+
+/* 목록 */
+
+.content {
+  composes: componentBase from '../../styles/global.module.css';
+  z-index: 1000;
+  overflow: hidden;
+
+  /* 트리거와 같은 너비로 열리고, 화면 안에 들어가는 높이까지만 늘어난다 */
+  min-width: var(--radix-select-trigger-width);
+  max-height: min(320px, var(--radix-select-content-available-height));
+  border: 1px solid var(--select-content-border);
+  border-radius: var(--select-content-radius);
+  background-color: var(--select-content-bg);
+  box-shadow: var(--select-content-shadow);
+  animation: fade-in 0.12s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+.viewport {
+  padding: var(--space-1);
+}
+
+.item {
+  /* componentBase는 목록 루트에만 붙으므로 크기를 계산하는 내부 요소는 box-sizing을 직접 지정한다 */
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
+  border-radius: var(--select-item-radius);
+  color: var(--select-item-text-default);
+  font-size: var(--font-size-200);
+  line-height: var(--line-height-normal);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+/* 키보드·마우스로 가리킨 항목. 목록 안 포커스 표시를 겸한다 — 배경(bg.muted)은 목록 면과 대비가 낮아(1.1:1)
+   왼쪽 안쪽의 accent 막대로 현재 항목을 확실히 보여준다. */
+.item[data-highlighted] {
+  background-color: var(--select-item-bg-highlighted);
+}
+
+.item[data-highlighted]::before {
+  position: absolute;
+  top: var(--space-2);
+  bottom: var(--space-2);
+  left: 0;
+  width: 3px;
+  border-radius: var(--select-item-radius);
+  background-color: var(--select-item-highlight-bar);
+  content: '';
+}
+
+.item[data-disabled] {
+  color: var(--select-item-text-disabled);
+  cursor: not-allowed;
+}
+
+.indicator {
+  position: absolute;
+  right: var(--space-3);
+  display: inline-flex;
+  color: var(--select-item-indicator);
+}

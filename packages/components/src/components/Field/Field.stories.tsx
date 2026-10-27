@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button';
 import { Input } from '../Input';
+import { Select } from '../Select';
 import { Textarea } from '../Textarea';
 import { Field } from './Field';
 
@@ -20,7 +21,7 @@ const meta: Meta<typeof Field.Root> = {
     docs: {
       description: {
         component: `
-라벨, 헬퍼 텍스트, 에러 메시지를 입력 컨트롤 하나와 묶는 래퍼. \`Input\`, \`Textarea\`, 네이티브 \`<select>\`가 모두 이 안에
+라벨, 헬퍼 텍스트, 에러 메시지를 입력 컨트롤 하나와 묶는 래퍼. \`Input\`, \`Textarea\`, \`Select\`가 모두 이 안에
 들어가 같은 간격과 연결 규칙을 쓴다. 색은 \`@aninganing/tokens\`의 \`field.*\` 컴포넌트 토큰을 소비한다.
 
 ### 구성
@@ -156,30 +157,38 @@ export const WithTextarea: Story = {
   ),
 };
 
-export const WithNativeSelect: Story = {
+export const WithSelect: Story = {
   args: { required: true },
   parameters: {
     docs: {
       description: {
         story:
-          '네이티브 `<select>`도 `Field.Control`로 연결된다. 스타일이 입혀진 `Select` 컴포넌트는 따로 추가될 예정이다.',
+          '`Select`를 넣은 예시. `Field.Control`이 얹는 `id`·`aria-*`가 Select의 트리거로 가서, 라벨을 누르면 트리거로 포커스가 가고 도움말이 설명으로 읽힌다.',
       },
     },
   },
-  render: (args) => (
-    <Field.Root {...args}>
-      <Field.Label>지역</Field.Label>
-      <Field.Control>
-        <select defaultValue="">
-          <option value="" disabled>
-            지역을 선택해 주세요
-          </option>
-          <option value="seongsu">성수</option>
-          <option value="hapjeong">합정</option>
-        </select>
-      </Field.Control>
-    </Field.Root>
-  ),
+  render: function Render(args) {
+    const [region, setRegion] = useState('');
+    return (
+      <Field.Root {...args}>
+        <Field.Label>지역</Field.Label>
+        <Field.Control>
+          <Select
+            options={[
+              { value: 'seongsu', label: '성수' },
+              { value: 'hapjeong', label: '합정' },
+              { value: 'yeonnam', label: '연남' },
+            ]}
+            placeholder="지역을 선택해 주세요"
+            value={region}
+            onValueChange={setRegion}
+          />
+        </Field.Control>
+        <Field.Helper>클래스가 열리는 동네예요</Field.Helper>
+        <Field.Error>지역을 선택해 주세요</Field.Error>
+      </Field.Root>
+    );
+  },
 };
 
 export const FormExample: Story = {

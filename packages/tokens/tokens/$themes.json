@@ -24,7 +24,8 @@
       "component/tooltip": "enabled",
       "component/icon-button": "enabled",
       "component/spinner": "enabled",
-      "component/field": "enabled"
+      "component/field": "enabled",
+      "component/select": "enabled"
     }
   },
   {
@@ -52,7 +53,8 @@
       "component/tooltip": "enabled",
       "component/icon-button": "enabled",
       "component/spinner": "enabled",
-      "component/field": "enabled"
+      "component/field": "enabled",
+      "component/select": "enabled"
     }
   }
 ]
