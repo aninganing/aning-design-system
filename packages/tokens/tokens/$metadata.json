@@ -22,6 +22,7 @@
     "component/tooltip",
     "component/icon-button",
     "component/spinner",
-    "component/field"
+    "component/field",
+    "component/select"
   ]
 }
