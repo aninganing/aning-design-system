@@ -20,6 +20,7 @@
     "component/switch",
     "component/textarea",
     "component/tooltip",
-    "component/icon-button"
+    "component/icon-button",
+    "component/spinner"
   ]
 }

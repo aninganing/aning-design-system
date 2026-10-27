@@ -1,0 +1,65 @@
+/* role="status" 영역. 회전 원은 장식(aria-hidden)이고 상태는 숨긴 문구로 알린다. */
+.base {
+  composes: componentBase from '../../styles/global.module.css';
+  display: inline-flex;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* 원형 테두리에서 오른쪽 1/4만 비워 회전한다. */
+.circle {
+  box-sizing: border-box;
+  display: block;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border: var(--spinner-stroke) solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 모션 감소 설정에서도 진행 중이라는 신호는 남긴다: componentBase의 애니메이션 정지 규칙을 덮어쓰고
+   회전만 느리게 한다. 멈춘 고리는 화면이 멈춘 것처럼 보인다. */
+@media (prefers-reduced-motion: reduce) {
+  .base .circle {
+    animation-duration: 2.4s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+
+.label {
+  composes: visuallyHidden from '../../styles/global.module.css';
+}
+
+/* sizes */
+
+.sizeSm {
+  --spinner-size: 16px;
+  --spinner-stroke: 2px;
+}
+
+.sizeMd {
+  --spinner-size: 24px;
+  --spinner-stroke: 2px;
+}
+
+.sizeLg {
+  --spinner-size: 32px;
+  --spinner-stroke: 3px;
+}
+
+/* tones */
+
+.toneCurrent {
+  color: inherit;
+}
+
+.toneAccent {
+  color: var(--spinner-accent);
+}
