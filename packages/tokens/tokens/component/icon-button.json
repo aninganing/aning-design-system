@@ -1,0 +1,22 @@
+{
+  "icon-button": {
+    "fg": {
+      "default": { "$type": "color", "$value": "{color.text.default}" },
+      "pressed": { "$type": "color", "$value": "{color.accent.default}" }
+    },
+    "bg": {
+      "hover": { "$type": "color", "$value": "{color.bg.subtle}" },
+      "overlay": { "$type": "color", "$value": "{color.bg.default}" }
+    },
+    "border": {
+      "outline": { "$type": "color", "$value": "{color.border.control}" }
+    },
+    "radius": {
+      "square": { "$type": "borderRadius", "$value": "{radius.md}" },
+      "round": { "$type": "borderRadius", "$value": "{radius.full}" }
+    },
+    "shadow": {
+      "overlay": { "$type": "boxShadow", "$value": "{shadow.sm}" }
+    }
+  }
+}

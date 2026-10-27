@@ -19,6 +19,7 @@
     "component/radio",
     "component/switch",
     "component/textarea",
-    "component/tooltip"
+    "component/tooltip",
+    "component/icon-button"
   ]
 }

@@ -1,0 +1,97 @@
+.base {
+  composes: componentBase focusRing from '../../styles/global.module.css';
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--icon-button-fg-default);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.base:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.base:hover:not(:disabled) {
+  background-color: var(--icon-button-bg-hover);
+}
+
+.base[aria-pressed='true'] {
+  color: var(--icon-button-fg-pressed);
+}
+
+/* 아이콘은 크기 프리셋을 따른다 — 아이콘 컴포넌트의 width/height 속성보다 CSS가 우선한다. */
+.base > svg {
+  flex-shrink: 0;
+}
+
+/* variants */
+
+.variantOutline {
+  border-color: var(--icon-button-border-outline);
+}
+
+.variantOverlay {
+  background-color: var(--icon-button-bg-overlay);
+  box-shadow: var(--icon-button-shadow-overlay);
+}
+
+/* sizes */
+
+.sizeSm {
+  width: 32px;
+  height: 32px;
+}
+
+/* 32px 버튼도 터치 영역은 44px을 확보한다. */
+.sizeSm::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.sizeSm > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sizeMd {
+  width: 40px;
+  height: 40px;
+}
+
+.sizeMd > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sizeLg {
+  width: 48px;
+  height: 48px;
+}
+
+.sizeLg > svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* shapes */
+
+.shapeSquare {
+  border-radius: var(--icon-button-radius-square);
+}
+
+.shapeRound {
+  border-radius: var(--icon-button-radius-round);
+}

@@ -1,29 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { IconBase } from '@aninganing/icons';
 import { Button } from '../Button';
+// 스토리 이름 `IconButton`과 겹치지 않도록 별칭으로 가져온다.
+import { IconButton as IconButtonComponent } from '../IconButton';
 import { Tooltip } from './Tooltip';
 
-// 스토리 전용 아이콘 버튼 (원형, 물음표)
+// 아이콘 패키지에 아직 물음표 아이콘이 없어 스토리 전용으로 IconBase 위에 그린다.
+const HelpIcon = () => (
+  <IconBase>
+    <circle cx="8" cy="8" r="6.25" stroke="currentColor" strokeWidth="1.5" />
+    <path
+      d="M6.25 6.25a1.75 1.75 0 1 1 2.5 1.6c-.45.2-.75.62-.75 1.1V9.5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <circle cx="8" cy="11.75" r="0.75" fill="currentColor" />
+  </IconBase>
+);
+
 const HelpButton = (props: { 'aria-label': string }) => (
-  <button
-    type="button"
-    {...props}
-    style={{
-      display: 'inline-grid',
-      placeItems: 'center',
-      width: 32,
-      height: 32,
-      padding: 0,
-      border: '1px solid var(--color-border-default)',
-      borderRadius: '50%',
-      background: 'var(--color-bg-default)',
-      color: 'var(--color-text-subtle)',
-      font: 'inherit',
-      fontWeight: 600,
-      cursor: 'pointer',
-    }}
-  >
-    ?
-  </button>
+  <IconButtonComponent {...props} size="sm" shape="round">
+    <HelpIcon />
+  </IconButtonComponent>
 );
 
 const meta: Meta<typeof Tooltip> = {
