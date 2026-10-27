@@ -1,0 +1,5 @@
+{
+  "spinner": {
+    "accent": { "$type": "color", "$value": "{color.text.accent}" }
+  }
+}

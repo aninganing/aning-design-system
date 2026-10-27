@@ -27,6 +27,9 @@ export type { RadioProps, RadioGroupProps } from './components/Radio';
 export { Skeleton } from './components/Skeleton';
 export type { SkeletonProps } from './components/Skeleton';
 
+export { Spinner } from './components/Spinner';
+export type { SpinnerProps } from './components/Spinner';
+
 export { Switch } from './components/Switch';
 export type { SwitchProps } from './components/Switch';
 
