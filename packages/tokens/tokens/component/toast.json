@@ -1,0 +1,18 @@
+{
+  "toast": {
+    "bg": { "$type": "color", "$value": "{color.bg.inverse}" },
+    "text": { "$type": "color", "$value": "{color.text.inverse}" },
+    "action": {
+      "text": { "$type": "color", "$value": "{color.text.accent-on-inverse}" },
+      "radius": { "$type": "borderRadius", "$value": "{radius.sm}" }
+    },
+    "radius": { "$type": "borderRadius", "$value": "{radius.md}" },
+    "shadow": { "$type": "boxShadow", "$value": "{shadow.md}" },
+    "gap": { "$type": "spacing", "$value": "{space.3}" },
+    "padding": {
+      "y": { "$type": "spacing", "$value": "{space.3}" },
+      "x": { "$type": "spacing", "$value": "{space.4}" }
+    },
+    "offset": { "$type": "spacing", "$value": "{space.4}" }
+  }
+}

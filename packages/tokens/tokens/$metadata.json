@@ -26,6 +26,7 @@
     "component/select",
     "component/number-stepper",
     "component/radio-card",
-    "component/alert"
+    "component/alert",
+    "component/toast"
   ]
 }
