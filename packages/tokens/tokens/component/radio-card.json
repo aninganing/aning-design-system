@@ -1,0 +1,37 @@
+{
+  "radio-card": {
+    "gap": { "$type": "spacing", "$value": "{space.3}" },
+    "padding": { "$type": "spacing", "$value": "{space.4}" },
+    "radius": { "$type": "borderRadius", "$value": "{radius.lg}" },
+    "border": {
+      "default": { "$type": "color", "$value": "{color.border.default}" },
+      "hover": { "$type": "color", "$value": "{color.border.control}" },
+      "selected": { "$type": "color", "$value": "{color.accent.default}" },
+      "invalid": { "$type": "color", "$value": "{color.danger.default}" }
+    },
+    "bg": {
+      "default": { "$type": "color", "$value": "{color.bg.default}" },
+      "selected": { "$type": "color", "$value": "{color.accent.subtle}" },
+      "disabled": { "$type": "color", "$value": "{color.bg.subtle}" }
+    },
+    "text": {
+      "default": { "$type": "color", "$value": "{color.text.default}" },
+      "disabled": { "$type": "color", "$value": "{color.text.subtle}" }
+    },
+    "description": {
+      "default": { "$type": "color", "$value": "{color.text.subtle}" },
+      "selected": { "$type": "color", "$value": "{color.text.on-accent-subtle}" }
+    },
+    "control": {
+      "border": {
+        "default": { "$type": "color", "$value": "{radio.border.default}" },
+        "checked": { "$type": "color", "$value": "{radio.border.checked}" }
+      },
+      "bg": {
+        "default": { "$type": "color", "$value": "{radio.bg.default}" },
+        "checked": { "$type": "color", "$value": "{radio.bg.checked}" }
+      },
+      "dot": { "$type": "color", "$value": "{radio.dot}" }
+    }
+  }
+}

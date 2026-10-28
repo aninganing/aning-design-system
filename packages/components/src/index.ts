@@ -36,6 +36,9 @@ export type { NumberStepperProps } from './components/NumberStepper';
 export { Radio, RadioGroup } from './components/Radio';
 export type { RadioProps, RadioGroupProps } from './components/Radio';
 
+export { RadioCard } from './components/RadioCard';
+export type { RadioCardProps } from './components/RadioCard';
+
 export { Select } from './components/Select';
 export type { SelectProps, SelectOption } from './components/Select';
 
