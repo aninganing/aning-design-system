@@ -1,0 +1,129 @@
+/* 타이머, hover·포커스 중 멈춤, 스와이프로 닫기, F8로 영역 이동, 읽어 주기(숨긴 live 영역)는 Radix Toast가 맡고 모양만 입힌다. */
+.viewport {
+  composes: componentBase from '../../styles/global.module.css';
+  position: fixed;
+  bottom: calc(var(--toast-offset) + var(--toast-viewport-offset, 0px) + env(safe-area-inset-bottom));
+  left: 50%;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: min(calc(100vw - var(--space-8)), 360px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  transform: translateX(-50%);
+}
+
+.toast {
+  composes: componentBase from '../../styles/global.module.css';
+  display: flex;
+  align-items: center;
+  gap: var(--toast-gap);
+  min-height: 48px;
+  padding: var(--toast-padding-y) var(--toast-padding-x);
+  border-radius: var(--toast-radius);
+  background-color: var(--toast-bg);
+  box-shadow: var(--toast-shadow);
+  color: var(--toast-text);
+  font-size: var(--font-size-100);
+  line-height: var(--line-height-normal);
+}
+
+.toast[data-state='open'] {
+  animation: slide-in 0.2s ease-out;
+}
+
+.toast[data-state='closed'] {
+  animation: fade-out 0.15s ease-in forwards;
+}
+
+/* 아래로 스와이프해 닫기 */
+.toast[data-swipe='move'] {
+  transform: translateY(var(--radix-toast-swipe-move-y));
+}
+
+.toast[data-swipe='cancel'] {
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+.toast[data-swipe='end'] {
+  animation: swipe-out 0.15s ease-out forwards;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.icon > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.message {
+  flex: 1;
+  min-width: 0;
+}
+
+.action {
+  composes: focusRing from '../../styles/global.module.css';
+  flex: none;
+  margin: calc(var(--space-2) * -1) calc(var(--space-2) * -1) calc(var(--space-2) * -1) 0;
+  padding: var(--space-2);
+  border: 0;
+  border-radius: var(--toast-action-radius);
+  background: none;
+  color: var(--toast-action-text);
+  font: inherit;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.action:hover {
+  text-decoration: underline;
+}
+
+/* 모션 감소 시에는 슬라이드 없이 페이드만 — componentBase의 애니메이션 끄기(!important)를 덮어쓴다 */
+@media (prefers-reduced-motion: reduce) {
+  .viewport .toast[data-state='open'] {
+    animation-name: fade-in;
+    animation-duration: 0.2s !important;
+  }
+
+  .viewport .toast[data-state='closed'] {
+    animation-duration: 0.15s !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes swipe-out {
+  from {
+    transform: translateY(var(--radix-toast-swipe-end-y));
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}

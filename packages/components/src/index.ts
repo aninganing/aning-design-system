@@ -63,5 +63,8 @@ export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './c
 export { Textarea } from './components/Textarea';
 export type { TextareaProps } from './components/Textarea';
 
+export { Toaster, toast } from './components/Toast';
+export type { ToasterProps, ToastOptions, ToastAction } from './components/Toast';
+
 export { Tooltip } from './components/Tooltip';
 export type { TooltipProps } from './components/Tooltip';
