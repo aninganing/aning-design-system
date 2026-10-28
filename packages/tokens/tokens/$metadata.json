@@ -25,6 +25,7 @@
     "component/field",
     "component/select",
     "component/number-stepper",
-    "component/radio-card"
+    "component/radio-card",
+    "component/alert"
   ]
 }

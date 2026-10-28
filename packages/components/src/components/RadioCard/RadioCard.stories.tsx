@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Alert } from '../Alert';
 import { Badge } from '../Badge';
 import { RadioGroup } from '../Radio';
 import { RadioCard } from './RadioCard';
@@ -109,7 +110,7 @@ export const Invalid: Story = {
     docs: {
       description: {
         story:
-          '골라 둔 회차가 그사이 마감된 상태. 선택은 남겨 두고 danger 테두리로 표시한다. 이유는 카드 밖에 글자로 쓰고 `aria-describedby`로 카드에 연결한다(Alert가 생기면 Alert로 바꾼다).',
+          '골라 둔 회차가 그사이 마감된 상태. 선택은 남겨 두고 danger 테두리로 표시한다. 이유는 카드 밖 Alert에 쓰고 그 `id`를 카드의 `aria-describedby`로 연결한다.',
       },
     },
   },
@@ -117,9 +118,7 @@ export const Invalid: Story = {
     const reasonId = useId();
     return (
       <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-        <p id={reasonId} style={{ margin: 0, color: 'var(--color-text-danger)', fontSize: 'var(--font-size-100)' }}>
-          선택한 회차가 마감됐어요. 다른 회차를 골라 주세요.
-        </p>
+        <Alert id={reasonId} tone="danger" title="선택한 회차가 마감됐어요" description="다른 회차를 골라 주세요." />
         <RadioGroup legend="회차 선택" defaultValue="a">
           <RadioCard {...args} aria-describedby={reasonId} />
         </RadioGroup>

@@ -1,5 +1,8 @@
 import '@aninganing/tokens/css';
 
+export { Alert } from './components/Alert';
+export type { AlertProps } from './components/Alert';
+
 export { Badge } from './components/Badge';
 export type { BadgeProps } from './components/Badge';
 

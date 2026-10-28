@@ -27,7 +27,8 @@
       "component/field": "enabled",
       "component/select": "enabled",
       "component/number-stepper": "enabled",
-      "component/radio-card": "enabled"
+      "component/radio-card": "enabled",
+      "component/alert": "enabled"
     }
   },
   {
@@ -58,7 +59,8 @@
       "component/field": "enabled",
       "component/select": "enabled",
       "component/number-stepper": "enabled",
-      "component/radio-card": "enabled"
+      "component/radio-card": "enabled",
+      "component/alert": "enabled"
     }
   }
 ]
