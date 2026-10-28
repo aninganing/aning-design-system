@@ -24,6 +24,7 @@
     "component/spinner",
     "component/field",
     "component/select",
-    "component/number-stepper"
+    "component/number-stepper",
+    "component/radio-card"
   ]
 }

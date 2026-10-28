@@ -1,0 +1,128 @@
+/* 카드 전체가 <label>이라 어디를 눌러도 선택된다. 네이티브 input type="radio"는 시각적으로만 숨기고, 상태는
+   :has()로 카드에, 바로 뒤 형제 .circle에 그린다. 원은 Radio와 같은 23px(radio-card.control.* 토큰이 radio.*를 참조). */
+.base {
+  composes: componentBase from '../../styles/global.module.css';
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--radio-card-gap);
+  padding: var(--radio-card-padding);
+  border: 1px solid var(--radio-card-border-default);
+  border-radius: var(--radio-card-radius);
+  background-color: var(--radio-card-bg-default);
+  color: var(--radio-card-text-default);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* 선택: 1px 테두리 + 안쪽 1px 그림자로 2px처럼 보이게 해 크기가 흔들리지 않게 한다 */
+.base:has(.input:checked) {
+  border-color: var(--radio-card-border-selected);
+  background-color: var(--radio-card-bg-selected);
+  box-shadow: inset 0 0 0 1px var(--radio-card-border-selected);
+}
+
+.base:has(.input:disabled) {
+  background-color: var(--radio-card-bg-disabled);
+  color: var(--radio-card-text-disabled);
+  cursor: not-allowed;
+}
+
+/* invalid는 선택·비활성보다 우선한다 — 골라 둔 회차가 마감된 경우처럼 선택된 채 막힌 상태가 대부분이다 */
+.invalid,
+.invalid:has(.input:checked) {
+  border-color: var(--radio-card-border-invalid);
+  box-shadow: inset 0 0 0 1px var(--radio-card-border-invalid);
+}
+
+/* 포커스 링은 원이 아니라 카드 바깥에 그린다 */
+.base:has(.input:focus-visible) {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* hover는 고르지 않은 일반 카드에만 — 선택·비활성·invalid 테두리를 덮지 않는다 */
+.base:hover:not(.invalid, :has(.input:checked, .input:disabled)) {
+  border-color: var(--radio-card-border-hover);
+}
+
+.input {
+  composes: visuallyHidden from '../../styles/global.module.css';
+}
+
+.circle {
+  /* componentBase는 카드 루트에만 붙으므로 크기가 고정된 원은 box-sizing을 직접 지정한다 */
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 23px;
+  height: 23px;
+  margin-top: 2px;
+  border: 1.5px solid var(--radio-card-control-border-default);
+  border-radius: 50%;
+  background-color: var(--radio-card-control-bg-default);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.circle::after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--radio-card-control-dot);
+  content: '';
+  opacity: 0;
+}
+
+.input:checked + .circle {
+  border-color: var(--radio-card-control-border-checked);
+  background-color: var(--radio-card-control-bg-checked);
+}
+
+.input:checked + .circle::after {
+  opacity: 1;
+}
+
+.input:disabled + .circle {
+  opacity: 0.5;
+}
+
+.text {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: var(--space-1);
+}
+
+.title {
+  font-size: var(--font-size-200);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.description {
+  color: var(--radio-card-description-default);
+  font-size: var(--font-size-100);
+  line-height: var(--line-height-normal);
+}
+
+/* text.subtle은 accent-subtle 면 위에서 4.5:1에 못 미쳐(라이트 4.44:1) 선택된 카드에서는 한 단계 진하게 */
+.base:has(.input:checked) .description {
+  color: var(--radio-card-description-selected);
+}
+
+.base:has(.input:disabled) .description {
+  color: var(--radio-card-text-disabled);
+}
+
+.aside {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  align-self: center;
+  font-size: var(--font-size-100);
+}
