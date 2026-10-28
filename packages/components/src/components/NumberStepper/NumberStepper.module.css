@@ -1,0 +1,72 @@
+/* −·+ 원형 버튼과 가운데 값. 키보드 입력이 없는 그룹 + output 방식이라 값은 버튼으로만 바뀐다. */
+.base {
+  composes: componentBase from '../../styles/global.module.css';
+  display: inline-flex;
+  align-items: center;
+  gap: var(--number-stepper-gap);
+}
+
+.button {
+  composes: focusRing from '../../styles/global.module.css';
+
+  /* componentBase는 그룹 루트에만 붙으므로 크기가 고정된 버튼은 box-sizing을 직접 지정한다 */
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--number-stepper-button-border-default);
+  border-radius: var(--number-stepper-button-radius);
+  background-color: var(--number-stepper-button-bg-default);
+  color: var(--number-stepper-button-fg-default);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* sizes */
+
+.sizeSm .button {
+  width: 32px;
+  height: 32px;
+}
+
+/* 32px 버튼도 터치 영역은 44px을 확보한다(IconButton sm과 같은 방식) */
+.sizeSm .button::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.sizeMd .button {
+  width: 40px;
+  height: 40px;
+}
+
+/* 한계에 닿은 버튼. 흐리게(opacity) 하지 않고 테두리·아이콘 색으로 구분한다 */
+.button:disabled {
+  border-color: var(--number-stepper-button-border-disabled);
+  color: var(--number-stepper-button-fg-disabled);
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--number-stepper-button-bg-hover);
+}
+
+.value {
+  min-width: 2ch;
+  color: var(--number-stepper-value-fg);
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--line-height-tight);
+  text-align: center;
+}

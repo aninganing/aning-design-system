@@ -23,6 +23,7 @@
     "component/icon-button",
     "component/spinner",
     "component/field",
-    "component/select"
+    "component/select",
+    "component/number-stepper"
   ]
 }

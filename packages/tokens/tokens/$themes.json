@@ -25,7 +25,8 @@
       "component/icon-button": "enabled",
       "component/spinner": "enabled",
       "component/field": "enabled",
-      "component/select": "enabled"
+      "component/select": "enabled",
+      "component/number-stepper": "enabled"
     }
   },
   {
@@ -54,7 +55,8 @@
       "component/icon-button": "enabled",
       "component/spinner": "enabled",
       "component/field": "enabled",
-      "component/select": "enabled"
+      "component/select": "enabled",
+      "component/number-stepper": "enabled"
     }
   }
 ]
