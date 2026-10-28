@@ -35,6 +35,8 @@ const DialogRoot = ({
   const items = Children.toArray(children);
   const footer = items.filter((child) => isValidElement(child) && child.type === DialogFooter);
   const body = items.filter((child) => !footer.includes(child));
+  const hasBody = body.length > 0;
+  const hasFooter = footer.length > 0;
   const preventIfLocked = (event: Event) => {
     if (!dismissible) event.preventDefault();
   };
@@ -60,7 +62,7 @@ const DialogRoot = ({
           {...props}
         >
           {variant === 'sheet' && <div className={styles.handle} aria-hidden="true" />}
-          <div className={styles.header}>
+          <div className={clsx(styles.header, !hasBody && !hasFooter && styles.last)}>
             <RadixDialog.Title ref={titleRef} className={styles.title} tabIndex={-1}>
               {title}
             </RadixDialog.Title>
@@ -68,7 +70,7 @@ const DialogRoot = ({
               <RadixDialog.Description className={styles.description}>{description}</RadixDialog.Description>
             )}
           </div>
-          {body.length > 0 && <div className={styles.body}>{body}</div>}
+          {hasBody && <div className={clsx(styles.body, !hasFooter && styles.last)}>{body}</div>}
           <DialogVariantContext value={variant ?? 'center'}>{footer}</DialogVariantContext>
           {dismissible && (
             <RadixDialog.Close asChild>
