@@ -1,9 +1,15 @@
 {
   "dialog": {
     "bg": { "$type": "color", "$value": "{color.bg.default}" },
+    "border": { "$type": "color", "$value": "{color.border.default}" },
     "overlay": { "$type": "color", "$value": "#00000080" },
     "radius": { "$type": "borderRadius", "$value": "{radius.lg}" },
     "shadow": { "$type": "boxShadow", "$value": "{shadow.md}" },
-    "padding": { "$type": "spacing", "$value": "{space.6}" }
+    "padding": { "$type": "spacing", "$value": "{space.6}" },
+    "gap": { "$type": "spacing", "$value": "{space.4}" },
+    "title": { "$type": "color", "$value": "{color.text.default}" },
+    "description": { "$type": "color", "$value": "{color.text.subtle}" },
+    "text": { "$type": "color", "$value": "{color.text.default}" },
+    "handle": { "$type": "color", "$value": "{color.border.default}" }
   }
 }

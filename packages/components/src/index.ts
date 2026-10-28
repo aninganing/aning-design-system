@@ -18,6 +18,9 @@ export type { CheckboxProps, CheckboxGroupProps } from './components/Checkbox';
 export { Chip } from './components/Chip';
 export type { ChipProps, ToggleChipProps, RemovableChipProps } from './components/Chip';
 
+export { Dialog } from './components/Dialog';
+export type { DialogProps, DialogFooterProps } from './components/Dialog';
+
 export { Field } from './components/Field';
 export type {
   FieldRootProps,
