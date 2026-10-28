@@ -30,6 +30,9 @@ export type { IconButtonProps } from './components/IconButton';
 export { Input } from './components/Input';
 export type { InputProps } from './components/Input';
 
+export { NumberStepper } from './components/NumberStepper';
+export type { NumberStepperProps } from './components/NumberStepper';
+
 export { Radio, RadioGroup } from './components/Radio';
 export type { RadioProps, RadioGroupProps } from './components/Radio';
 
