@@ -1,5 +1,32 @@
 # @aninganing/react
 
+## 0.5.0
+
+### Minor Changes
+
+- d1cbad4: Alert 컴포넌트 추가. 화면 안에 머무는 안내로 `tone`(info·neutral·danger), `title`, `description`, `icon`(tone별 기본 아이콘, 교체·`null`로 숨김), `action`(오른쪽 슬롯), `live`(off·polite·assertive → 없음·`role="status"`·`role="alert"`, 기본 off). danger는 면을 칠하지 않고 테두리와 아이콘으로 표시한다. `alert.*` 컴포넌트 토큰을 추가했다.
+- 7cf390a: Dialog 컴포넌트 추가 (Radix Dialog 기반). `variant`(`center` 가운데 창 · `sheet` 아래에서 올라오는 시트), `trigger` 또는 `open`/`defaultOpen`/`onOpenChange`, `title`·`description`(창 이름·설명), `dismissible`(Esc·바깥 클릭·닫기 버튼, 기본 true), `initialFocus`(기본은 제목에 포커스), `closeLabel`. 버튼 영역 `Dialog.Footer`는 본문 스크롤 밖에 고정되고 `layout`(`end`·`stretch`, 시트 기본 stretch)을 갖는다. `@radix-ui/react-dialog`(1.1.23 고정)를 dependencies에 추가했다. `dialog.*` 토큰에 border·gap·title·description·text·handle을 추가했다. 창 테두리(`border.default`)는 다크에서 창이 오버레이에 덮인 페이지와 구분되게 한다.
+- 9cf5ef5: Field 컴포넌트 추가(합성형). `Field.Root`(`required`·`optional`·`invalid`·`fullWidth`), `Field.Label`, `Field.Control`, `Field.Helper`, `Field.Error`. `Field.Control`이 자식 컨트롤에 `id`·`aria-describedby`·`aria-invalid`·`required`를 얹어 Input, Textarea, 네이티브 select와 연결한다. 에러가 보이는 동안 헬퍼는 숨고, 필수 표시 `*`는 스크린 리더에 숨긴다. Input·Textarea는 `aria-invalid="true"`만으로도 에러 테두리가 된다. `field.*` 컴포넌트 토큰을 추가했다.
+- 31a7c1d: IconButton 컴포넌트 추가. `aria-label` 필수, `variant`(ghost·outline·overlay), `size`(sm 32px·md 40px·lg 48px, 아이콘 16·20·24px), `shape`(square·round), 토글형 `pressed`/`onPressedChange`(`aria-pressed`, 켜지면 accent 색). `sm`은 터치 영역을 44px까지 넓힌다. outline 테두리는 `color.border.control`을 쓴다. `icon-button.*` 컴포넌트 토큰을 추가했다.
+- cd5013f: NumberStepper 컴포넌트 추가. −·+ 원형 버튼과 가운데 값으로 작은 정수를 한 단계씩 바꾼다. `label`(그룹 이름, 버튼 이름 "~ 줄이기"·"~ 늘리기"), `value`/`defaultValue`/`onValueChange`, `min`(기본 1)·`max`·`step`(기본 1), `onClamp`(`max`·`min`이 바뀌어 값이 범위로 맞춰졌을 때), `disabled`, `size`(sm 32px·md 40px). `role="group"` + `<output aria-live="polite">` 방식이고, 한계에 닿아 비활성된 버튼의 포커스는 반대쪽 버튼으로 옮긴다. `number-stepper.*` 컴포넌트 토큰을 추가했다.
+- d2df095: RadioCard 컴포넌트 추가. 카드 전체가 눌리는 단일 선택 컨트롤로 `RadioGroup` 안에 넣어 쓴다. `value`, `title`(라디오 이름), `description`·`aside`(오른쪽 슬롯, `aria-describedby`로 연결), `disabled`, `invalid`(골라 둔 항목이 더는 고를 수 없게 된 상태, 테두리로만 표시하고 이유는 `aria-describedby`로 연결). 원은 Radio와 같은 23px이고 포커스 링은 카드 바깥에 그린다. `radio-card.*` 컴포넌트 토큰과, accent-subtle 면 위 보조 글자용 semantic 토큰 `color.text.on-accent-subtle`(라이트 gray-600 / 다크 gray-300)을 추가했다.
+- 6088ee8: Select 컴포넌트 추가 (Radix Select 기반). `options`(`{ value, label, disabled? }[]`), `value`/`defaultValue`/`onValueChange`, `placeholder`, `size`(sm·md·lg, Input과 같은 단계), `invalid`, `required`, `disabled`, `name`(숨긴 네이티브 select로 폼 제출), `open`/`onOpenChange`. 트리거는 Input과 같은 테두리·포커스·에러 표현이고 `Field.Control`로 라벨·설명이 연결된다. `@radix-ui/react-select`(2.3.7 고정)를 dependencies에 추가하고 `select.*` 컴포넌트 토큰을 추가했다.
+- 6c8e051: Spinner 컴포넌트 추가. `size`(sm 16px·md 24px·lg 32px), `tone`(current·accent), 스크린 리더용 `label`(기본 "불러오는 중"), `delay`(기본 300ms, 그 전에는 그리지 않음). `role="status"` 영역에 회전 원(aria-hidden)과 숨긴 문구를 둔다. 모션 감소 설정에서는 멈추지 않고 2.4초 주기로 느리게 돈다. `spinner.*` 컴포넌트 토큰을 추가했다.
+- dbaa132: Toast 추가 (Radix Toast 기반). 앱 루트의 `<Toaster />`(`offset`, `label`)와 어디서든 부르는 `toast({ message, icon?, action?: { label, onClick, altText? }, duration? })` 함수, `toast.dismiss(id)`. 기본 5초(action이 있으면 8초), hover·포커스 중 멈춤, 최대 3개(넘치면 가장 오래된 것부터 닫힘), 아래로 스와이프해 닫기, 모션 감소 시 페이드만. Toaster가 여러 개 마운트돼도 하나만 그린다. `@radix-ui/react-toast`(1.2.23 고정)를 dependencies에 추가하고, `toast.*` 컴포넌트 토큰과 반전 면 위 액션 글자용 semantic 토큰 `color.text.accent-on-inverse`(라이트 blue-300 / 다크 blue-700)를 추가했다.
+
+### Patch Changes
+
+- Updated dependencies [d1cbad4]
+- Updated dependencies [7cf390a]
+- Updated dependencies [9cf5ef5]
+- Updated dependencies [31a7c1d]
+- Updated dependencies [cd5013f]
+- Updated dependencies [d2df095]
+- Updated dependencies [6088ee8]
+- Updated dependencies [6c8e051]
+- Updated dependencies [dbaa132]
+  - @aninganing/tokens@0.4.0
+
 ## 0.4.1
 
 ### Patch Changes
