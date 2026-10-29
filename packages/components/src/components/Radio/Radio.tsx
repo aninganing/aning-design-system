@@ -1,18 +1,10 @@
-import { createContext, useContext, useId } from 'react';
+import { useContext, useId } from 'react';
 import clsx from 'clsx';
 import { useControllableState } from '@aninganing/utils';
 import { radioGroup } from './Radio.variants';
+import { RadioGroupContext } from './RadioGroupContext';
 import styles from './Radio.module.css';
 import type { RadioGroupProps, RadioProps } from './Radio.types';
-
-interface RadioGroupContextValue {
-  name: string;
-  value: string;
-  required: boolean;
-  select: (value: string) => void;
-}
-
-const RadioGroupContext = createContext<RadioGroupContextValue | null>(null);
 
 export const RadioGroup = ({
   ref,

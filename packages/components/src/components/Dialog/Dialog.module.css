@@ -1,0 +1,147 @@
+/* 포털·포커스 가두기·바깥 inert(aria-hidden)·스크롤 잠금·Esc·포커스 복귀는 Radix Dialog가 맡고 모양만 입힌다. */
+.overlay {
+  composes: componentBase from '../../styles/global.module.css';
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: var(--dialog-overlay);
+  animation: fade-in 0.15s ease-out;
+}
+
+.content {
+  composes: componentBase from '../../styles/global.module.css';
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+
+  /* 다크에서는 창 면이 오버레이에 덮인 페이지와 거의 같은 색이라 테두리로 경계를 그린다 */
+  border: 1px solid var(--dialog-border);
+  background-color: var(--dialog-bg);
+  box-shadow: var(--dialog-shadow);
+  color: var(--dialog-text);
+  outline: none;
+}
+
+.header {
+  display: grid;
+  flex: none;
+  gap: var(--space-2);
+
+  /* 오른쪽 위 닫기 버튼(32px)과 제목이 겹치지 않게 */
+  padding: var(--dialog-padding) calc(var(--dialog-padding) + 32px) 0 var(--dialog-padding);
+}
+
+.title {
+  margin: 0;
+  color: var(--dialog-title);
+  font-size: var(--font-size-400);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  outline: none;
+}
+
+.description {
+  margin: 0;
+  color: var(--dialog-description);
+  font-size: var(--font-size-100);
+  line-height: var(--line-height-normal);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--dialog-gap) var(--dialog-padding) 0;
+  font-size: var(--font-size-200);
+  line-height: var(--line-height-normal);
+}
+
+.close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.footer {
+  display: flex;
+  flex: none;
+  gap: var(--space-2);
+  padding: var(--dialog-gap) var(--dialog-padding) var(--dialog-padding);
+}
+
+/* 시트는 손잡이 아래라 위 여백을 줄인다 */
+.variantSheet .header {
+  padding-top: var(--space-4);
+}
+
+/* Footer가 없으면 맨 아래에 오는 본문(본문도 없으면 헤더)이 창 아래 여백을 갖는다.
+   닫기 버튼이 DOM 마지막에 있어 :last-child로는 고를 수 없어 컴포넌트가 클래스를 붙인다. */
+.last {
+  padding-bottom: var(--dialog-padding);
+}
+
+.layoutEnd {
+  justify-content: flex-end;
+}
+
+.layoutStretch > * {
+  flex: 1;
+}
+
+/* variants */
+
+.variantCenter {
+  top: 50%;
+  left: 50%;
+  width: min(calc(100vw - var(--space-8)), 480px);
+  max-height: calc(100dvh - var(--space-8));
+  border-radius: var(--dialog-radius);
+  transform: translate(-50%, -50%);
+  animation: scale-in 0.15s ease-out;
+}
+
+.variantSheet {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 85dvh;
+  border-bottom: 0;
+  border-radius: var(--dialog-radius) var(--dialog-radius) 0 0;
+  animation: slide-up 0.2s ease-out;
+}
+
+/* 시트 손잡이. 장식이라 aria-hidden이고 드래그로 닫히지 않는다 — 닫기 버튼이 항상 있다 */
+.handle {
+  flex: none;
+  width: 36px;
+  height: 4px;
+  margin: var(--space-2) auto 0;
+  border-radius: 2px;
+  background-color: var(--dialog-handle);
+}
+
+/* 아이폰 홈 표시줄 위로 버튼이 올라오게 */
+.variantSheet .footer,
+.variantSheet .last {
+  padding-bottom: calc(var(--dialog-padding) + env(safe-area-inset-bottom));
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.97);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+}

@@ -47,8 +47,10 @@
   overflow-y: hidden;
 }
 
+/* error prop 외에 Field.Control이 얹는 aria-invalid로도 에러 테두리가 된다 */
 .stateError,
-.stateError:focus {
+.stateError:focus,
+.field[aria-invalid='true'] {
   border-color: var(--textarea-border-error);
 }
 

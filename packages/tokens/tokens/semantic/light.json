@@ -12,7 +12,9 @@
       "subtle": { "$type": "color", "$value": "{color.gray.500}" },
       "inverse": { "$type": "color", "$value": "{color.white}" },
       "danger": { "$type": "color", "$value": "{color.red.600}" },
-      "accent": { "$type": "color", "$value": "{color.blue.600}" }
+      "accent": { "$type": "color", "$value": "{color.blue.600}" },
+      "on-accent-subtle": { "$type": "color", "$value": "{color.gray.600}" },
+      "accent-on-inverse": { "$type": "color", "$value": "{color.blue.300}" }
     },
     "border": {
       "default": { "$type": "color", "$value": "{color.gray.200}" },
